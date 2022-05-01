@@ -18,14 +18,14 @@ function exportZip() {
     alert ("Keine Modelldatei ausgewählt...");
     return false;
   }
-  
+
   var zip = new JSZip();
   var file;
   var folder;
 
   // Add upload
   file = document.getElementById("upload").files[0];
-  zip.file("model.glb", temp, {binary: true});
+  zip.file("model.glb", file, {binary: true});
   
   // Add files in data/
   file = fetchFile('data/main.css');
