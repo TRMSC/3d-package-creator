@@ -62,7 +62,7 @@
 				const loader = new GLTFLoader().setPath( './' );
 				loader.setKTX2Loader( ktx2Loader );
 				loader.setMeshoptDecoder( MeshoptDecoder );
-				loader.load( 'content.glb', function ( gltf ) {
+				loader.load( 'model.glb', function ( gltf ) {
 					gltf.scene.position.y = 100;
 					mesh = gltf.scene;
 					scene.add( gltf.scene );
