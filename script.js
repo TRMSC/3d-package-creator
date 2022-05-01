@@ -1,4 +1,7 @@
 console.log ("script.js loaded");
+var time = new Date();
+var year = time.getFullYear();
+document.getElementById("year").innerHTML = year;
 
 function exportZip() {
   var zip = new JSZip();
