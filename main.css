@@ -2,3 +2,7 @@ html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 10pt;
 }
+.indList {
+    border-left: 1px solid black;
+    padding-left: 10px;
+}
