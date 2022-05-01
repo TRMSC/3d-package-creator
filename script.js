@@ -14,25 +14,18 @@ function openFile() {
 }
 
 function exportZip() {
+  if (upload == false) {
+    alert ("Keine Modelldatei ausgewählt...");
+    return false;
+  }
+  
   var zip = new JSZip();
   var file;
   var folder;
 
   // Add upload
-  if (upload == false) {
-    alert ("Keine Modelldatei ausgewählt...");
-    return false;
-  }
-  document.getElementById("upload").addEventListener("change", function (params) {
-    var zip = new JSZip();
-    var temp = this.files[0];
-    zip.file("model.glb", temp);
-    zip.generateAsync({ type: "blob" })
-        .then(function (content) {
-            // see FileSaver.js
-            saveAs(content, "example.zip");
-        });
-  })
+  file = document.getElementById("upload").files[0];
+  zip.file("model.glb", temp, {binary: true});
   
   // Add files in data/
   file = fetchFile('data/main.css');
