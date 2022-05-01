@@ -1,8 +1,8 @@
 console.log ("script.js loaded");
 
-var openFile = function(event) {
+function openFile() {
   alert ("Diese Funktion ist noch in Arbeit. Die Datei wird aktuell noch nicht in das zip-Archiv übernommen...");
-};
+}
 
 function getYear() {
   var time = new Date();
