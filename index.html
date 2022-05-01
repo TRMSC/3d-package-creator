@@ -12,22 +12,63 @@
   <body onload="getYear()">
     <h1>3D-PACKAGE-CREATOR</h1>
     <h3>Dieses Tool ist noch in der Entwicklung... 🤓</h3>
+    <hr>
+    <div class="description">
+      <h2>
+        Allgemeine Informationen:
+      </h2>
+      <p>
+        Der 3d-Package-Creator ist ein Tool zur Erstellung eines zip-Archivs,
+        das als eigenes 3d-Modell auf einem Webserver sowie innerhalb von Plattformen
+        wie Moodle oder Wordpress gehostet werden kann.<br>
+        Dabei werden alle notwendigen Abhängigkeiten integriert,
+        sodass keine externen Skripte geladen werden.
+      </p>
+      <p>
+        Für den 3d-Package-Creator wurden Teile der Javascript-Libraries
+        <a target="_blank" href="https://github.com/mrdoob/three.js/">three.js</a>,
+        <a target="_blank" href="https://github.com/Stuk/jszip">jszip</a> sowie
+        <a target="_blank" href="https://github.com/Stuk/jszip-utils">jszip-utils</a>
+        verwendet.<br>Vielen Dank an die Autor:innen!
+      </p>
+      <p>
+        Ein großer Dank gilt außerdem
+        <a target="_blank" href="https://twitter.com/norbert_forster">Norbert Forster</a>
+        für die Bereitstellung der three.js-Komponenten für das Zielarchiv. 
+      </p>
+    </div>
+    <div class="description">
+      <h2>
+        Vorbereitung:
+      </h2>  
+      <p>
+        Um mithilfe dieses Creators ein eigenständiges 3d-Paket zu erstellen, ist eine
+        <a target="_blank" href="https://datei.wiki/extension/glb">glb-Datei</a>
+        notwendig.
+      </p>   
+    </div>
+    <h2>
+      3d-Paket erstellen:
+    </h2>
+    <div id="files">
+      <fieldset style="width: fit-content;">
+        <legend>
+          Modell hochladen
+        </legend>
+        <input type="file" accept=".glb" id="upload" class="mxport" onchange="openFile()">
+      </fieldset>
+      <p></p>
+      <fieldset style="width: fit-content;">
+        <legend>
+          Paket herunterladen
+        </legend>
+        <input type="button" id="download" value="Eigenständiges 3d-Paket herunterladen" onclick="exportZip()">
+      </fieldset>
+    </div>
     <br>
-    <fieldset style="width: fit-content;">
-      <legend>
-        Modell hochladen
-      </legend>
-      <input type="file" accept=".glb" id="upload" class="mxport" onchange="openFile()">
-    </fieldset>
-    <p></p>
-    <fieldset style="width: fit-content;">
-      <legend>
-        Paket herunterladen
-      </legend>
-      <input type="button" id="download" value="Eigenständiges 3d-Paket herunterladen" onclick="exportZip()">
-    </fieldset>
+    <hr style="margin-top: 20px;">
   </body>
-  <footer style="bottom: 8px; position: absolute; font-size: smaller;">
+  <footer style="bottom: auto; font-size: smaller;">
     &copy; <a target="_blank" href="https://trmsc1.wordpress.com/"> TRMSC </a><span id="year"></span>.
       Dieses Tool ist lizensiert unter der 
       <a target="_blank" href="http://www.opensource.org/licenses/mit-license.php">MIT Lizenz</a>.
