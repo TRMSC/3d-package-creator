@@ -9,11 +9,11 @@
     <script src="src/filesaver.js"></script>
 
     <script type="text/javascript">
-      console.log ("with fetch function");
+      console.log ("with fetch function - v2");
       function exportZip() {
         var zip = new JSZip();
-        let maincss = fetch('data/main.css')
-          .then(response => response.text());
+        
+        let maincss = fetchFile('data/main.css');
         zip.file("smile.css", maincss, {binary: true});
         
         let indexhtml = fetchFile('data/index.html');
