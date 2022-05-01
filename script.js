@@ -4,6 +4,13 @@ function getYear() {
   var time = new Date();
   var year = time.getFullYear();
   document.getElementById("year").innerHTML = year;
+  return;
+}
+
+var upload = false;
+function openFile() {
+  upload = true;
+  return;
 }
 
 function exportZip() {
@@ -12,6 +19,10 @@ function exportZip() {
   var folder;
 
   // Add upload
+  if (upload == false) {
+    alert ("Keine Modelldatei ausgewählt...");
+    return false;
+  }
   document.getElementById("upload").addEventListener("change", function (params) {
     var zip = new JSZip();
     var temp = this.files[0];
@@ -78,6 +89,7 @@ function exportZip() {
     // see FileSaver.js
     saveAs(content, "3d-package.zip");
   });
+  return;
 }
 
 function fetchFile(path) {
