@@ -1,3 +1,6 @@
+/* 3D Package-Creator - Copyright (C) 2022, TRMSC - https://trmsc1.wordpress.com/ */
+/* Licensed under the MIT license - http://www.opensource.org/licenses/mit-license.php */
+
 console.log ("script.js loaded");
 
 function getYear() {
