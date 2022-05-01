@@ -12,7 +12,20 @@
   <body onload="getYear()">
     <h1>3D-PACKAGE-CREATOR</h1>
     <h3>Dieses Tool ist noch in der Entwicklung... 🤓</h3>
-    <input type="button" id="download" value="Eigenständiges 3d-Paket herunterladen" onclick="exportZip()">
+    <br>
+    <fieldset style="width: fit-content;">
+      <legend>
+        Modell hochladen
+      </legend>
+      <input type="file" accept=".glb" id="upload" class="mxport" onchange="openFile(event)">
+    </fieldset>
+    <p></p>
+    <fieldset style="width: fit-content;">
+      <legend>
+        Paket herunterladen
+      </legend>
+      <input type="button" id="download" value="Eigenständiges 3d-Paket herunterladen" onclick="exportZip()">
+    </fieldset>
   </body>
   <footer style="bottom: 8px; position: absolute; font-size: smaller;">
     &copy; <a target="_blank" href="https://trmsc1.wordpress.com/"> TRMSC </a><span id="year"></span>.
