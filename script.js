@@ -1,9 +1,5 @@
 console.log ("script.js loaded");
 
-function openFile() {
-  alert ("Diese Funktion ist noch in Arbeit. Die Datei wird aktuell noch nicht in das zip-Archiv übernommen...");
-}
-
 function getYear() {
   var time = new Date();
   var year = time.getFullYear();
@@ -14,6 +10,18 @@ function exportZip() {
   var zip = new JSZip();
   var file;
   var folder;
+
+  // Add upload
+  document.getElementById("upload").addEventListener("change", function (params) {
+    var zip = new JSZip();
+    var temp = this.files[0];
+    zip.file("model.glb", temp);
+    zip.generateAsync({ type: "blob" })
+        .then(function (content) {
+            // see FileSaver.js
+            saveAs(content, "example.zip");
+        });
+  })
   
   // Add files in data/
   file = fetchFile('data/main.css');
