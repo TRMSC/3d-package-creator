@@ -7,18 +7,21 @@
     <script src="src/jszip.js"></script>
     <script src="src/jszip-utils.js"></script>
     <script src="src/filesaver.js"></script>
+
     <script type="text/javascript">
       function exportZip() {
         var zip = new JSZip();
-        var maincss = "https://raw.githubusercontent.com/TRMSC/3d-package-creator/main/data/main.css";
-        zip.file("main.css", maincss);
+        let maincss = fetch('data/main.css')
+          .then(response => response.text())
+        zip.file("smile.css", maincss, {binary: true});
         zip.generateAsync({type:"blob"})
         .then(function(content) {
             // see FileSaver.js
-            saveAs(content, "example.zip");
-        });  
+            saveAs(content, "3d-package.zip");
+        });
       }
     </script>
+    
   </head>
   <body>
     <h1>3D-PACKAGE-CREATOR</h1>
