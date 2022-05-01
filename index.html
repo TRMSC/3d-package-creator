@@ -6,6 +6,18 @@
     <title>3d-package-creator</title>
     <script src="https://cdn.jsdelivr.net/npm/jszip@3.9.1/dist/jszip.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jszip@3.9.1/dist/jszip.min.js"></script>
+    <script type="text/javascript">
+      function exportZip() {
+        var zip = new JSZip();
+        var maincss = "https://raw.githubusercontent.com/TRMSC/3d-package-creator/main/data/main.css";
+        zip.file("main.css", maincss);
+        zip.generateAsync({type:"blob"})
+        .then(function(content) {
+            // see FileSaver.js
+            saveAs(content, "example.zip");
+        });  
+      }
+    </script>
   </head>
   <body>
     <h1>3D-PACKAGE-CREATOR</h1>
@@ -13,15 +25,3 @@
     <input type="button" id="download" value="Eigenständiges 3d-Packet herunterladen" onclick="exportZip()">
   </body>
 </html>
-
-<script type="text/javascript">
-  function exportZip() {
-    var zip = new JSZip();
-    zip.file("main.css", https://raw.githubusercontent.com/TRMSC/3d-package-creator/main/data/main.css);
-    zip.generateAsync({type:"blob"})
-    .then(function(content) {
-        // see FileSaver.js
-        saveAs(content, "example.zip");
-    });  
-  }
-</script>
