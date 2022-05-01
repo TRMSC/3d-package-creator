@@ -10,7 +10,7 @@ function exportZip() {
   var zip = new JSZip();
         
   let maincss = fetchFile('data/main.css');
-  zip.file("smile.css", maincss, {binary: true});
+  zip.file("main.css", maincss, {binary: true});
         
   let indexhtml = fetchFile('data/index.html');
   zip.file("index.html", indexhtml, {binary: true});
