@@ -9,13 +9,13 @@
     <script src="src/filesaver.js"></script>
     <script src="script.js"></script>    
   </head>
-  <body>
+  <body onload="getYear()">
     <h1>3D-PACKAGE-CREATOR</h1>
     <h3>This tool is under construction... 🤓</h3>
     <input type="button" id="download" value="Eigenständiges 3d-Packet herunterladen" onclick="exportZip()">
   </body>
   <footer style="bottom: 8px; position: absolute; font-size: smaller;">
-    &copy; <a target="_blank" href="https://trmsc1.wordpress.com/"> TRMSC </a><span id="year" onload="getYear()"></span>.
+    &copy; <a target="_blank" href="https://trmsc1.wordpress.com/"> TRMSC </a><span id="year"></span>.
       Dieses Tool ist lizensiert unter der 
       <a target="_blank" href="http://www.opensource.org/licenses/mit-license.php">MIT Lizenz</a>.
       Hier geht es zur <a target="_blank" href="https://github.com/TRMSC/3d-package-creator">Projektseite</a>.
