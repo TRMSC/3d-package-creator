@@ -1,0 +1,13 @@
+.file-input-btn {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#content-preview {
+    width: fit-content;
+    border: 1px solid;
+}
+.filename-container {
+    display: none!important;
+}
