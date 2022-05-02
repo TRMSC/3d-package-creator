@@ -11,6 +11,20 @@
     <script src="./src/file/jszip-utils.js"></script>
     <script src="./src/file/filesaver.js"></script>
     <script src="./script.js"></script>    
+
+    <link rel="stylesheet" href="./src/preview/style.css" />
+
+    <script src="./src/preview/arjs-studio-backend.min.js"></script>
+    <script src="./src/preview/aframe.js"></script>
+
+    <script src="./src/preview/file-select.js"></script>
+    <script src="./src/preview/file-holder.js"></script>
+    <script src="./src/preview/model-controller.js"></script>
+    <script src="./src/preview/fileHelper.js"></script>
+    <script src="./src/preview/fileTemplate.js"></script>
+    <script src="./src/preview/fileHandler.js"></script>
+    <script src="./src/preview/marker.js" defer></script>
+
   </head>
   <body onload="getYear()">
     <h1>3D-PACKAGE-CREATOR</h1>
@@ -98,6 +112,7 @@
         glTF oder zip-Archive werden ggf. in einer folgenden Version aufgenommen.
       </sub>
     </div>
+
     <br>
     <h2>
       3d-Paket erstellen:
@@ -107,8 +122,19 @@
         <legend>
           glb-Modell hochladen
         </legend>
-        <input type="file" accept=".glb" id="upload" class="mxport" onchange="openFile()">
+        <input type="file" accept=".glb" id="upload" class="mxport" onchange="handleContentUpload(this); openFile();">
       </fieldset>
+      <p></p>
+      <div class="pages-content">
+        <div class="pages-content-container">
+            <div class="pages-content-element">
+                <p id="content-error" class="error"></p>
+            </div>
+            <div id="content-preview" target="content-file">
+                <file-holder></file-holder>
+            </div>
+        </div>
+      </div>
       <p></p>
       <fieldset style="width: fit-content;">
         <legend>
@@ -117,6 +143,9 @@
         <input type="button" id="download" value="Eigenständiges 3d-Paket herunterladen" onclick="exportZip()">
       </fieldset>
     </div>
+
+
+
     <br>
     <div class="description">
       <h2>
