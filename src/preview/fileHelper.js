@@ -1,3 +1,7 @@
+/* The MIT License */
+/* Copyright © 2015-2017 A-Frame authors. */
+/* https://github.com/aframevr/aframe */
+
 const supportedFileMap = {
     '3d': {
         types: ['gltf', 'glb', 'zip'],
