@@ -1,3 +1,7 @@
+/* The MIT License */
+/* Copyright © 2015-2017 A-Frame authors. */
+/* https://github.com/aframevr/aframe */
+
 const reg4Base64 = /^data\:[\w-]+\/[\w-]+;base64,/; // check where the data is base64 format
 
 function handleUnload(self, isMarker = false) {
