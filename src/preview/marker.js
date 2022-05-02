@@ -4,8 +4,8 @@
 
 const { MarkerModule, Package } = ARjsStudioBackend;
 
-var githubButton = document.querySelector('page-footer').shadowRoot.querySelector('#github-publish');
-var zipButton = document.querySelector('page-footer').shadowRoot.querySelector('#zip-publish');
+//var githubButton = document.querySelector('page-footer').shadowRoot.querySelector('#github-publish');
+//var zipButton = document.querySelector('page-footer').shadowRoot.querySelector('#zip-publish');
 
 window.assetParam = {
     scale: 1.0,
@@ -44,15 +44,15 @@ const checkUserUploadStatus = () => {
 // All the required components are uploaded by the user => footer will be enable
 const enablePageFooter = (enable) => {
     if (enable) {
-        githubButton.classList.remove('publish-disabled');
-        zipButton.classList.remove('publish-disabled');
-        githubButton.removeAttribute('disabled');
-        zipButton.removeAttribute('disabled');
+        //githubButton.classList.remove('publish-disabled');
+        //zipButton.classList.remove('publish-disabled');
+        //githubButton.removeAttribute('disabled');
+        //zipButton.removeAttribute('disabled');
     } else {
-        githubButton.classList.add('publish-disabled');
-        zipButton.classList.add('publish-disabled');
-        githubButton.setAttribute('disabled', '');
-        zipButton.setAttribute('disabled', '');
+        //githubButton.classList.add('publish-disabled');
+        //zipButton.classList.add('publish-disabled');
+        //githubButton.setAttribute('disabled', '');
+        //zipButton.setAttribute('disabled', '');
     }
 }
 
@@ -111,5 +111,3 @@ const publish = () => {
         )
 }
 
-zipButton.addEventListener('click', zip);
-githubButton.addEventListener('click', publish);
