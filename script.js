@@ -11,7 +11,8 @@ function getYear() {
 }
 
 var upload = false;
-function openFile() {
+function openFile(fileUpload) {
+  handleContentUpload(fileUpload);
   upload = true;
   return;
 }
