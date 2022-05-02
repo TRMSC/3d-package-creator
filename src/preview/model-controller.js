@@ -1,3 +1,7 @@
+/* The MIT License */
+/* Copyright © 2015-2017 A-Frame authors. */
+/* https://github.com/aframevr/aframe */
+
 // to handle the model control for 3d content
 AFRAME.registerComponent('model-controller', {
     dependencies: ['gltf-model'],
