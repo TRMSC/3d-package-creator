@@ -1,3 +1,7 @@
+/* The MIT License */
+/* Copyright © 2015-2017 A-Frame authors. */
+/* https://github.com/aframevr/aframe */
+
 const { MarkerModule, Package } = ARjsStudioBackend;
 
 var githubButton = document.querySelector('page-footer').shadowRoot.querySelector('#github-publish');
