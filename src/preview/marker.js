@@ -20,10 +20,11 @@ window.assetParam = {
  * Initialize the default marker image on page load.
  */
 const setDefaultMarker = () => {
+    /*
     const c = document.createElement('canvas');
     const img = document.querySelector('.default-marker-hidden');
-    c.height = img.naturalHeight;
-    c.width = img.naturalWidth;
+    //c.height = img.naturalHeight;
+    //c.width = img.naturalWidth;
     const ctx = c.getContext('2d');
 
     ctx.drawImage(img, 0, 0, c.width, c.height);
@@ -35,6 +36,7 @@ const setDefaultMarker = () => {
             window.fullMarkerImage = fullMarkerImage;
             img.remove();
         });
+    */
 }
 
 const checkUserUploadStatus = () => {
