@@ -23,25 +23,28 @@
 </head>
 
 <body>
-      <fieldset style="width: fit-content;">
-        <legend>
-          Modell hochladen
-        </legend>
-        <input type="file" accept=".glb" id="upload" class="mxport" onchange="handleContentUpload(this)">
-      </fieldset>
     <div class="pages-content">
         <div class="pages-content-container">
             <div class="pages-content-element">
                 <h1>AR.JS PREVIEW</h1>
-                <label class="file-input-btn">
-                    <input id="content-file" accept="*" type="file" hidden onchange="handleContentUpload(this)" />
-                    Upload file
-                </label>
+                <fieldset style="width: fit-content;">
+                    <legend>
+                      Modell hochladen
+                    </legend>
+                    <input type="file" accept=".glb" id="upload" class="mxport" onchange="handleContentUpload(this)">
+                </fieldset>
                 <p id="content-error" class="error"></p>
             </div>
             <div id="content-preview" target="content-file">
                 <file-holder></file-holder>
             </div>
+            <!--
+            <br>
+            <label class="file-input-btn">
+                <input id="content-file" accept="*" type="file" hidden onchange="handleContentUpload(this)" />
+                Alternativer Upload
+            </label>
+            -->
         </div>
     </div>
 </body>

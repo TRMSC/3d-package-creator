@@ -99,8 +99,8 @@ const previewVideoStyle = `
 
 const previewModelStyle = `
     .modelFrame {
-        width: 23.75em;
-        height: 23.75em;
+        width: 17em; /* default 23.75em */
+        height: 17em; /* default 23.75em */
         object-fit: contain;
         font-size: 1.25em;
         text-align: center;
