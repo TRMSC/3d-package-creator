@@ -149,7 +149,7 @@ function handleModelUpload(file) {
             //for backend api asset needs only base64 part
             window.assetFile = reader.result.split(",")[1];
             window.assetName = 'asset.glb';
-            checkUserUploadStatus();
+            //checkUserUploadStatus();
             let preview = document.getElementById("content-preview");
             preview.innerHTML = previewModelTemplate(reader.result, file.name);
         };
