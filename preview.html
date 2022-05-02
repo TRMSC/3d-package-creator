@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AR.js Studio</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <script src="./src/preview/arjs-studio-backend.min.js"></script>
+    <script src="./src/preview/aframe.js"></script>
+
+    <script src="./src/preview/file-select.js"></script>
+    <script src="./src/preview/file-holder.js"></script>
+    <script src="./src/preview/footer.js"></script>
+    <script src="./src/preview/model-controller.js"></script>
+    <script src="./src/preview/fileHelper.js"></script>
+    <script src="./src/preview/fileTemplate.js"></script>
+    <script src="./src/preview/fileHandler.js"></script>
+    <script src="./src/preview/marker.js" defer></script>
+
+</head>
+
+<body onload="setDefaultMarker()">
+      <fieldset style="width: fit-content;">
+        <legend>
+          Modell hochladen
+        </legend>
+        <input type="file" accept=".glb" id="upload" class="mxport" onchange="handleContentUpload(this)">
+      </fieldset>
+    <div class="pages-content">
+        <div class="pages-content-container">
+            <div class="pages-content-element">
+                <h1>AR.JS PREVIEW</h1>
+                <label class="file-input-btn">
+                    <input id="content-file" accept="*" type="file" hidden onchange="handleContentUpload(this)" />
+                    Upload file
+                </label>
+                <p id="content-error" class="error"></p>
+            </div>
+            <div id="content-preview" target="content-file">
+                <file-holder></file-holder>
+            </div>
+        </div>
+    </div>
+
+    <page-footer></page-footer>
+</body>
+
+</html>
+
+</html>
