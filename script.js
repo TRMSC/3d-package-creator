@@ -10,6 +10,7 @@ function getYear() {
   return;
 }
 
+var origin = false;
 var upload = false;
 function openFile(fileUpload) {
   file = document.getElementById("upload").files[0];
