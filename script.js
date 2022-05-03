@@ -38,7 +38,8 @@ function exportZip(file, origin) {
 
   // Add converted file
   if (origin == false) {
-    zip.file("model.glb", file1);
+    zip.file("model.glb", file);
+    /*
   JSZipUtils.getBinaryContent(file2, function (err, data) {
     if(err) {
        throw err; // or handle the error
@@ -46,6 +47,7 @@ function exportZip(file, origin) {
     }
     zip.file("model2.glb", data, {binary:true});
   });
+  */
 }
   
   // Add files in data/
