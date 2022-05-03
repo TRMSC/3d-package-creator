@@ -14,7 +14,7 @@ var origin = false;
 var upload = false;
 var fileUpload;
 function openFile(fileUpload) {
-  fileUpload = this.files[0];
+  //fileUpload = this.files[0];
   origin = true;
   upload = true;
   //fileUpload = document.getElementById("upload").files[0];
