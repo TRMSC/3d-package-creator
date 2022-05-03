@@ -12,6 +12,8 @@ function getYear() {
 
 var upload = false;
 function openFile(fileUpload) {
+  file = document.getElementById("upload").files[0];
+  console.log ("file is" + file);
   handleContentUpload(fileUpload);
   upload = true;
   return;
@@ -24,11 +26,11 @@ function exportZip() {
   }
 
   var zip = new JSZip();
-  var file;
+  //var file;
   var folder;
 
   // Add upload
-  file = document.getElementById("upload").files[0];
+  //file = document.getElementById("upload").files[0];
   zip.file("model.glb", file, {binary: true});
   
   // Add files in data/
