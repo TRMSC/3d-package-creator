@@ -290,9 +290,9 @@ function fileSave(){
     document.getElementById("downloadBtn").textContent="Download .glb";
     a.click();
     */
-    var file = new Blob([finalBuffer],{type: 'model/json-binary'});
+    file = new Blob([finalBuffer],{type: 'model/json-binary'});
+    handleContentUpload(file);
     upload == true;
-    exportZip(file);
 
 }
 
