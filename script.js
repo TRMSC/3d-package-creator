@@ -34,8 +34,10 @@ function exportZip() {
 
   // Add upload
   if (origin == true) {
-    //file = document.getElementById("upload").files[0];
+    file = document.getElementById("upload").files[0];
+    console.log (file);
     file = fileUpload;
+    console.log (file);
     zip.file("model.glb", file, {binary: true});
   }
 
