@@ -23,7 +23,7 @@ html {
     text-align: center;
     color: #bbb;
     padding: 15px;
-    transition: 0.4s;
+    /*transition: 0.4s;*/
 }     
 
 @media (max-width: 480px) {
