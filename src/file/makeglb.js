@@ -292,7 +292,8 @@ function fileSave(){
     */
     file = new Blob([finalBuffer],{type: 'model/json-binary'});
     handleContentUpload(file);
-    upload == true;
+    origin = false;
+    upload = true;
 
 }
 

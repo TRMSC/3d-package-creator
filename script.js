@@ -15,11 +15,12 @@ function openFile(fileUpload) {
   file = document.getElementById("upload").files[0];
   console.log ("file is uploaded");
   handleContentUpload(fileUpload);
+  origin = true;
   upload = true;
   return;
 }
 
-function exportZip(file) {
+function exportZip(file, origin) {
   if (upload == false) {
     alert ("Keine Modelldatei ausgewählt...");
     return false;
@@ -30,8 +31,20 @@ function exportZip(file) {
   var folder;
 
   // Add upload
-  //file = document.getElementById("upload").files[0];
-  zip.file("model.glb", file, {binary: true});
+  if (origin == true) {
+    //file = document.getElementById("upload").files[0];
+    zip.file("model.glb", file, {binary: true});
+  }
+
+  // Add converted file
+  if (origin == false) {
+  JSZipUtils.getBinaryContent(file, function (err, data) {
+    if(err) {
+       throw err; // or handle the error
+    }
+    zip.file("model.glb", data, {binary:true});
+  });
+}
   
   // Add files in data/
   file = fetchFile('data/main.css');
