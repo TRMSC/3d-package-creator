@@ -38,12 +38,13 @@ function exportZip(file, origin) {
 
   // Add converted file
   if (origin == false) {
-  JSZipUtils.getBinaryContent(file, function (err, data) {
+    zip.file("model.glb", file1);
+  JSZipUtils.getBinaryContent(file2, function (err, data) {
     if(err) {
        throw err; // or handle the error
        console.log ("does not work... " + file);
     }
-    zip.file("model.glb", data, {binary:true});
+    zip.file("model2.glb", data, {binary:true});
   });
 }
   
