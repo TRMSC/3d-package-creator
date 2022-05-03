@@ -15,6 +15,7 @@ var bufferOffset;
 function dropInit() {
   var dropZone = document.getElementById('drop_zone');
   dropZone.addEventListener('dragover', handleDragOver, false);
+  dropZone.addEventListener('leave', handleDragLeave, false);
   dropZone.addEventListener('drop', handleFileSelect, false);
 }
 
@@ -22,6 +23,15 @@ function handleDragOver(event) {
   event.stopPropagation();
   event.preventDefault();
   event.dataTransfer.dropEffect = 'copy';
+}
+
+function styleDragOver(event) {
+  document.getElementById("drop_zone").style.boxShadow = "0 0 10px";
+  document.getElementById("drop_zone").style.background = "#00000033";
+}
+function styleDragLeave(event) {
+  document.getElementById("drop_zone").style.boxShadow = "initial";
+  document.getElementById("drop_zone").style.background = "initial";
 }
 
 /*
@@ -34,11 +44,9 @@ function addDownloadButton() {
   document.getElementById("download").appendChild(btn);
 }
 
-
 function startDownload(){
     document.getElementById("downloadLink").click();
 }
-
 */
 
 function handleFileSelect(event) {
