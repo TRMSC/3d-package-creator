@@ -56,26 +56,57 @@ function handleFileSelect(event) {
         //console.log("entry")
     }
   }
+  console.log(remainingfilestoprocess+ " files");
+  console.log(items);
 }
 
 function uploadZip(fileInput) {
-  //document.getElementById('list').innerHTML="";
-  //addDownloadButton();
   file = document.getElementById("upload2").files[0];
   let fileType = file.name.split('.').slice(-1)[0];
   if (fileType === 'glb') {
-    //
+    console.log ("glb loaded");
+    console.log (file);
   }
-  else if (fileType === 'zip') {
+  if (fileType === 'zip') {
+    console.log ("zip loaded");
     const reader = new FileReader();
     reader.readAsArrayBuffer(file);
     reader.onloadend = function () {
       const data = reader.result;
+      console.log ("data is " + data);
+      console.log ("data is " + data.length);
+      var items = [];
+      fileNumber = 0;
       JSZip.loadAsync(data).then((zip) => {
-        for (let i in zip.files) console.log(i);
+        for (let i in zip.files) {
+          console.log(i);
+          items[fileNumber] = i;
+          fileNumber++;
+        }
+        console.log(fileNumber + " files");
+        console.log(items);
+
+        for (var j=0; j<fileNumber; j++) {
+          if (items[j].getAsEntry) {
+            var entry = items[j].getAsEntry();
+            console.log("1");
+          } 
+          else if (items[j].webkitGetAsEntry) {
+            var entry = items[j].webkitGetAsEntry();
+            console.log("2");
+          }
+          if (entry) {
+            traverseFileTree(entry);
+            //console.log("entry")
+            console.log("3");
+          }
+        }
       });
+
     }
   }
+  upload = true;
+}
 
 function traverseFileTree(item, path) {
   path = path || "";
