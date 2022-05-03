@@ -18,6 +18,7 @@ html {
     border: 1px solid #333;
     background: rgba(0,0,0,0.7);
     width: 17em;
+    height: fit-content;
 }
 #drop_zone {
     border: 2px dashed #bbb;
