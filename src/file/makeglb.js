@@ -27,6 +27,7 @@ function handleDragOver(event) {
 function styleDragOver(event) {
   document.getElementById("drop_zone").style.boxShadow = "0 0 10px";
   document.getElementById("drop_zone").style.background = "#00000033";
+
 }
 function styleDragLeave(event) {
   document.getElementById("drop_zone").style.boxShadow = "initial";

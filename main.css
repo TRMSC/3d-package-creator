@@ -10,6 +10,9 @@ html {
     border-left: 1px solid black;
     padding-left: 10px;
 }
+#drop {
+    display: flex;
+}
 .area {
     padding: 15px;
     border: 1px solid #333;
