@@ -41,6 +41,7 @@ function exportZip(file, origin) {
   JSZipUtils.getBinaryContent(file, function (err, data) {
     if(err) {
        throw err; // or handle the error
+       console.log ("does not work... " + file);
     }
     zip.file("model.glb", data, {binary:true});
   });
