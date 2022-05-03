@@ -53,7 +53,7 @@ function handleFileSelect(event) {
     }
     if (entry) {
         traverseFileTree(entry);
-        //console.log("entry")
+        console.log("entry");
     }
   }
   console.log(remainingfilestoprocess+ " files");
