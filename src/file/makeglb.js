@@ -19,9 +19,11 @@ function handleDragOver(event) {
   event.dataTransfer.dropEffect = 'copy';
 }
 
-var dropZone = document.getElementById('drop_zone');
-dropZone.addEventListener('dragover', handleDragOver, false);
-dropZone.addEventListener('drop', handleFileSelect, false);
+function dropInit() {
+    var dropZone = document.getElementById('drop_zone');
+    dropZone.addEventListener('dragover', handleDragOver, false);
+    dropZone.addEventListener('drop', handleFileSelect, false);
+}
 
 function addDownloadButton() {
   var btn = document.createElement("button");
@@ -51,6 +53,7 @@ function handleFileSelect(event) {
     }
     if (entry) {
         traverseFileTree(entry);
+        //console.log("entry")
     }
   }
 }

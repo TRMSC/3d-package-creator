@@ -20,9 +20,34 @@
     <script src="./src/preview/fileHandler.js"></script>
     <script src="./src/preview/marker.js" defer></script>
 
+    <script src="./src/file/makeglb.js"></script>
+    <script src="./src/file/jszip.js"></script>
+    <script src="./src/file/jszip-utils.js"></script>
+    <script src="./src/file/filesaver.js"></script>
+    <script src="./script.js"></script>    
+
+    <style>
+        .area {
+         width: 45em;
+         padding: 15px;
+         border: 1px solid #333;
+         background: rgba(0,0,0,0.7);
+       }
+       #drop_zone {
+         border: 2px dashed #bbb;
+         -webkit-border-radius: 5px;
+         border-radius: 5px;
+         padding: 50px;
+         text-align: center;
+         font: 21pt bold arial;
+         color: #bbb;
+       }
+       
+    </style>
+
 </head>
 
-<body>
+<body onload="dropInit();">
     <div class="pages-content">
         <div class="pages-content-container">
             <div class="pages-content-element">
@@ -37,8 +62,17 @@
                     <legend>
                       Modell hochladen (zip)
                     </legend>
-                    <input type="file" accept=".zip" id="upload" class="mxport" onchange="handleContentUpload(this)">
+                    <input type="file" accept="" id="upload" class="mxport" onchange="handleFileSelect(event)">
                 </fieldset>
+                <div class="area">
+                    <div id="drop_zone">Drop all files and folders for your glTF asset here</div>
+                </div>
+                <div id="download">
+                    <a href="#" id="downloadLink"></a>
+                </div>
+                <div>
+                    <ul id=list></ul>
+                </div>
                 <p id="content-error" class="error"></p>
             </div>
             <div id="content-preview" target="content-file">
