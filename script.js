@@ -12,6 +12,7 @@ function getYear() {
 
 var origin = false;
 var upload = false;
+var fileUpload;
 function openFile(fileUpload) {
   origin = true;
   upload = true;
