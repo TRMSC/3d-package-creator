@@ -9,3 +9,17 @@ html {
     border-left: 1px solid black;
     padding-left: 10px;
 }
+.area {
+    padding: 15px;
+    border: 1px solid #333;
+    background: rgba(0,0,0,0.7);
+    width: 17em;
+}
+#drop_zone {
+    border: 2px dashed #bbb;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    color: #bbb;
+    padding: 15px
+}     
