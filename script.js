@@ -15,6 +15,7 @@ var upload = false;
 var fileUpload;
 function openFile(fileUpload) {
   //fileUpload = this.files[0];
+  uploadGlb = document.getElementById("upload").files[0];
   origin = true;
   upload = true;
   //fileUpload = document.getElementById("upload").files[0];
@@ -37,9 +38,9 @@ function exportZip() {
   if (origin == true) {
     //file = document.getElementById("upload").files[0];
     //console.log (file);
-    file = fileUpload;
-    console.log (file);
-    zip.file("model.glb", file, {binary: true});
+    //file = fileUpload;
+    console.log (uploadGlb);
+    zip.file("model.glb", uploadGlb, {binary: true});
   }
 
   // Add converted file
