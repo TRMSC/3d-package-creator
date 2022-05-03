@@ -290,10 +290,10 @@ function fileSave(){
     document.getElementById("downloadBtn").textContent="Download .glb";
     a.click();
     */
-    file = new Blob([finalBuffer],{type: 'model/json-binary'});
-    handleContentUpload(file);
     origin = false;
     upload = true;
+    file = new Blob([finalBuffer],{type: 'model/json-binary'});
+    //handleContentUpload(file);
 
 }
 
