@@ -20,7 +20,7 @@ function openFile(fileUpload) {
   upload = true;
   //fileUpload = document.getElementById("upload").files[0];
   console.log ("file is uploaded");
-  handleModelUpload(fileUpload);
+  handleContentUpload(fileUpload);
   return;
 }
 
