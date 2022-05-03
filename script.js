@@ -19,7 +19,7 @@ function openFile(fileUpload) {
   return;
 }
 
-function exportZip() {
+function exportZip(file) {
   if (upload == false) {
     alert ("Keine Modelldatei ausgewählt...");
     return false;

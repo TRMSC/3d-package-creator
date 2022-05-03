@@ -66,6 +66,7 @@ function uploadZip(fileInput) {
   if (fileType === 'glb') {
     console.log ("glb loaded");
     console.log (file);
+    handleContentUpload(fileInput);
   }
   if (fileType === 'zip') {
     console.log ("zip loaded");
@@ -119,15 +120,14 @@ function traverseFileTree(item, path) {
         document.getElementById('list').innerHTML += fileitem;
 
         var extension = file.name.split('.').pop();
-        if ( extension === "gltf")
-          {
-            glbfilename=file.name.substr(file.name.lastIndexOf('/')+1,file.name.lastIndexOf('.'));
+        if ( extension === "gltf") {
+          glbfilename=file.name.substr(file.name.lastIndexOf('/')+1,file.name.lastIndexOf('.'));
           var reader = new FileReader();
           reader.readAsText(file);
           reader.onload = function(event) {
             gltf = JSON.parse(event.target.result);
             checkRemaining();
-            };
+          };
         }
         else{
           var reader = new FileReader();
@@ -281,6 +281,7 @@ function fileSave(){
         thisbufindex++;
     }
     }
+    /*
     var a = document.getElementById("downloadLink");
     var file = new Blob([finalBuffer],{type: 'model/json-binary'})
     a.href = URL.createObjectURL(file);
@@ -288,6 +289,11 @@ function fileSave(){
     document.getElementById("downloadBtn").disabled=false;
     document.getElementById("downloadBtn").textContent="Download .glb";
     a.click();
+    */
+    var file = new Blob([finalBuffer],{type: 'model/json-binary'});
+    upload == true;
+    exportZip(file);
+
 }
 
 
