@@ -23,6 +23,8 @@ function dropInit() {
     var dropZone = document.getElementById('drop_zone');
     dropZone.addEventListener('dragover', handleDragOver, false);
     dropZone.addEventListener('drop', handleFileSelect, false);
+    var uploadTest = document.getElementById('upload2');
+    upload2.addEventListener('change', handleFileSelect, false);
 }
 
 function addDownloadButton() {
