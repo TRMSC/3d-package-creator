@@ -23,8 +23,6 @@ function dropInit() {
     var dropZone = document.getElementById('drop_zone');
     dropZone.addEventListener('dragover', handleDragOver, false);
     dropZone.addEventListener('drop', handleFileSelect, false);
-    var uploadTest = document.getElementById('upload2');
-    upload2.addEventListener('change', handleFileSelect, false);
 }
 
 function addDownloadButton() {
@@ -59,6 +57,25 @@ function handleFileSelect(event) {
     }
   }
 }
+
+function uploadZip(fileInput) {
+  //document.getElementById('list').innerHTML="";
+  //addDownloadButton();
+  file = document.getElementById("upload2").files[0];
+  let fileType = file.name.split('.').slice(-1)[0];
+  if (fileType === 'glb') {
+    //
+  }
+  else if (fileType === 'zip') {
+    const reader = new FileReader();
+    reader.readAsArrayBuffer(file);
+    reader.onloadend = function () {
+      const data = reader.result;
+      JSZip.loadAsync(data).then((zip) => {
+        for (let i in zip.files) console.log(i);
+      });
+    }
+  }
 
 function traverseFileTree(item, path) {
   path = path || "";

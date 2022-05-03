@@ -205,7 +205,7 @@ function handleModelUpload(file) {
             }
             window.assetFile = result.split(",")[1];
             window.assetName = 'asset.gltf';
-            checkUserUploadStatus();
+            //checkUserUploadStatus();
             let preview = document.getElementById("content-preview");
             preview.innerHTML = previewModelTemplate(result, file.name);
         })

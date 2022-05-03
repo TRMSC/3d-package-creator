@@ -6,7 +6,7 @@ const supportedFileMap = {
     '3d': {
         types: ['gltf', 'glb', 'zip'],
         maxSize: 50 * 1024 * 1024,
-        maxSizeText: '50MB',
+        maxSizeText: '500MB',
     },
     image: {
         types: ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'],
