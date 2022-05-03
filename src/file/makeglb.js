@@ -292,7 +292,7 @@ function fileSave(){
     */
     origin = false;
     upload = true;
-    file1 = new Blob([finalBuffer],{type: 'model/json-binary'});
+    file = new Blob([finalBuffer],{type: 'model/json-binary'});
     file2 = URL.createObjectURL(file);
     //handleContentUpload(file);
 
