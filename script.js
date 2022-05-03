@@ -33,7 +33,7 @@ function exportZip() {
 
   // Add upload
   if (origin == true) {
-    //file = document.getElementById("upload").files[0];
+    file = document.getElementById("upload").files[0];
     zip.file("model.glb", file, {binary: true});
   }
 
@@ -43,16 +43,7 @@ function exportZip() {
     console.log ("blob is " + file);
     //file2 = URL.createObjectURL(file);
     zip.file("model.glb", file, {binary: true});
-    /*
-  JSZipUtils.getBinaryContent(file2, function (err, data) {
-    if(err) {
-       throw err; // or handle the error
-       console.log ("does not work... " + file);
-    }
-    zip.file("model2.glb", data, {binary:true});
-  });
-  */
-}
+  }
   
   // Add files in data/
   file = fetchFile('data/main.css');
