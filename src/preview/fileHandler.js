@@ -144,8 +144,10 @@ function handleVideoUpload(file) {
 function handleModelUpload(file) {
     if (file == false) {
         file = new Blob([finalBuffer],{type: 'model/json-binary'});
+        fileType = 'glb';
+    } else {
+        fileType = file.name.split('.').slice(-1)[0];
     }
-    let fileType = file.name.split('.').slice(-1)[0];
     if (fileType === 'glb') {
         const reader = new FileReader();
         reader.readAsDataURL(file);
