@@ -13,7 +13,7 @@ function getYear() {
 var upload = false;
 function openFile(fileUpload) {
   file = document.getElementById("upload").files[0];
-  console.log ("file is" + file);
+  console.log ("file is uploaded");
   handleContentUpload(fileUpload);
   upload = true;
   return;
