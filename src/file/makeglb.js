@@ -12,6 +12,11 @@ var outputBuffers;
 var bufferMap;
 var bufferOffset;
 
+function dropInit() {
+  var dropZone = document.getElementById('drop_zone');
+  dropZone.addEventListener('dragover', handleDragOver, false);
+  dropZone.addEventListener('drop', handleFileSelect, false);
+}
 
 function handleDragOver(event) {
   event.stopPropagation();
@@ -19,12 +24,7 @@ function handleDragOver(event) {
   event.dataTransfer.dropEffect = 'copy';
 }
 
-function dropInit() {
-    var dropZone = document.getElementById('drop_zone');
-    dropZone.addEventListener('dragover', handleDragOver, false);
-    dropZone.addEventListener('drop', handleFileSelect, false);
-}
-
+/*
 function addDownloadButton() {
   var btn = document.createElement("button");
   btn.id="downloadBtn";
@@ -33,6 +33,7 @@ function addDownloadButton() {
   btn.appendChild(document.createTextNode("Processing..."));
   document.getElementById("download").appendChild(btn);
 }
+*/
 
 function startDownload(){
     document.getElementById("downloadLink").click();
@@ -42,7 +43,7 @@ function handleFileSelect(event) {
   event.stopPropagation();
   event.preventDefault();
   document.getElementById('list').innerHTML="";
-  addDownloadButton();
+  //addDownloadButton();
   var items = event.dataTransfer.items;
   remainingfilestoprocess=items.length;
   for (var i=0; i<items.length; i++) {
