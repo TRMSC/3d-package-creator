@@ -29,9 +29,15 @@
                 <h1>AR.JS PREVIEW</h1>
                 <fieldset style="width: fit-content;">
                     <legend>
-                      Modell hochladen
+                      Modell hochladen (glb)
                     </legend>
                     <input type="file" accept=".glb" id="upload" class="mxport" onchange="handleContentUpload(this)">
+                </fieldset>
+                <fieldset style="width: fit-content;">
+                    <legend>
+                      Modell hochladen (zip)
+                    </legend>
+                    <input type="file" accept=".zip" id="upload" class="mxport" onchange="handleContentUpload(this)">
                 </fieldset>
                 <p id="content-error" class="error"></p>
             </div>
