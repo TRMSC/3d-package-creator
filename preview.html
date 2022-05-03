@@ -60,9 +60,9 @@
                 </fieldset>
                 <fieldset style="width: fit-content;">
                     <legend>
-                      Modell hochladen (zip)
+                      Modell hochladen (Ordner)
                     </legend>
-                    <input type="file" accept="" id="upload" class="mxport" onchange="handleFileSelect(event)">
+                    <input type="file" accept="" id="upload" class="mxport" webkitdirectory multiple onchange="handleFileSelect(event)">
                 </fieldset>
                 <div class="area">
                     <div id="drop_zone">Drop all files and folders for your glTF asset here</div>
