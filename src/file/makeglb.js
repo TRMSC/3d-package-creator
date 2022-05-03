@@ -33,11 +33,13 @@ function addDownloadButton() {
   btn.appendChild(document.createTextNode("Processing..."));
   document.getElementById("download").appendChild(btn);
 }
-*/
+
 
 function startDownload(){
     document.getElementById("downloadLink").click();
 }
+
+*/
 
 function handleFileSelect(event) {
   event.stopPropagation();
