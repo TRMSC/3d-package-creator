@@ -50,8 +50,8 @@ function handleMarkerUpload(self) {
 };
 
 function handleContentUpload(self) {
-    // const file = self.files[0];
-    file = self.files[0];
+    const file = self.files[0];
+    //file = self.files[0];
     window.assetType = getFileType(file); // set the assetType according to the file extension.
     window.assetParam.scale = 1.0;
     window.assetParam.size = { width: 1.0, height: 1.0, depth: 1.0, };
