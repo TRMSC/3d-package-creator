@@ -241,7 +241,7 @@ function fileSave(){
         jsonAlignedLength +
         8 + // bin chunk header: chunk length + type
         binBufferSize;
-    var finalBuffer = new ArrayBuffer(totalSize);
+    finalBuffer = new ArrayBuffer(totalSize);
     var dataView = new DataView(finalBuffer);
     var bufIndex = 0;
     dataView.setUint32(bufIndex, Binary.Magic, true);
@@ -292,8 +292,8 @@ function fileSave(){
     */
     origin = false;
     upload = true;
-    file = new Blob([finalBuffer],{type: 'model/json-binary'});
-    file2 = URL.createObjectURL(file);
+    //file = new Blob([finalBuffer],{type: 'model/json-binary'});
+    //file2 = URL.createObjectURL(file);
     //handleContentUpload(file);
 
 }

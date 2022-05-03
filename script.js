@@ -38,7 +38,9 @@ function exportZip(file, origin) {
 
   // Add converted file
   if (origin == false) {
-    zip.file("model.glb", file);
+    file = new Blob([finalBuffer],{type: 'model/json-binary'});
+    //file2 = URL.createObjectURL(file);
+    zip.file("model.glb", file, {binary: true});
     /*
   JSZipUtils.getBinaryContent(file2, function (err, data) {
     if(err) {
