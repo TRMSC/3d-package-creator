@@ -52,8 +52,8 @@ function handleFileSelect(event) {
       var entry = items[i].webkitGetAsEntry();
     }
     if (entry) {
-        traverseFileTree(entry);
-        console.log("entry");
+      console.log(entry);
+      traverseFileTree(entry);
     }
   }
   console.log(remainingfilestoprocess+ " files");
