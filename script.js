@@ -13,15 +13,15 @@ function getYear() {
 var origin = false;
 var upload = false;
 function openFile(fileUpload) {
+  origin = true;
+  upload = true;
   file = document.getElementById("upload").files[0];
   console.log ("file is uploaded");
   handleContentUpload(fileUpload);
-  origin = true;
-  upload = true;
   return;
 }
 
-function exportZip(file, origin) {
+function exportZip() {
   if (upload == false) {
     alert ("Keine Modelldatei ausgewählt...");
     return false;
