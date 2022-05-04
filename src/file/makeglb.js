@@ -125,11 +125,15 @@ function traverseFileTree(item, path) {
   if (item.isFile) {
     item.file(function(file) {
         files.push(file);
-        var fileitem = '<li><strong>'+ escape(file.name)+ '</strong> ('+ file.type + ') - '+
+        var extension = file.name.split('.').pop();
+        var filetype;
+        if (file.type == "") { filetype = extension; } 
+        else { filetype = file.type; }
+        var fileitem = '<li><strong>'+ escape(file.name)+ '</strong> ('+ filetype + ') - '+
                   file.size+ ' bytes ' + '</li>';
         document.getElementById('list').innerHTML += fileitem;
 
-        var extension = file.name.split('.').pop();
+        //var extension = file.name.split('.').pop();
         if ( extension === "glb") {
           console.log ("(makeglb) file is glb");
           openGlb(file);
