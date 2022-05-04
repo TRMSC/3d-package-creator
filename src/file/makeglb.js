@@ -129,7 +129,7 @@ function traverseFileTree(item, path) {
         var filetype;
         if (file.type == "") { filetype = extension; } 
         else { filetype = file.type; }
-        var fileitem = '<li><strong>'+ escape(file.name)+ '</strong> ('+ filetype + ') - '+
+        var fileitem = '<li><strong>'+ decodeURIComponent(file.name)+ '</strong> ('+ filetype + ') - '+
                   file.size+ ' bytes ' + '</li>';
         document.getElementById('list').innerHTML += fileitem;
 
