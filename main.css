@@ -39,7 +39,7 @@ li::marker {
     transition: 1.2s;
 }
 .checked {
-    transition: 1.6s;
+    transition: 2.2s;
     opacity: 1!important; 
 }
 
