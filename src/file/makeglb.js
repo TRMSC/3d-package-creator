@@ -313,7 +313,6 @@ function fileSave(){
     */
     origin = false;
     upload = true;
-    document.getElementById("filecheck").classList.add("checked");
     handleModelUpload(origin);
     //file = new Blob([finalBuffer],{type: 'model/json-binary'});
     //file2 = URL.createObjectURL(file);

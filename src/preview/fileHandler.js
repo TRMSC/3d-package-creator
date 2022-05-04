@@ -144,6 +144,7 @@ function handleVideoUpload(file) {
 };
 
 function handleModelUpload(file) {
+    document.getElementById("filecheck").classList.add("checked");
     if (file == false) {
         file = new Blob([finalBuffer],{type: 'model/json-binary'});
         fileType = 'glb';
