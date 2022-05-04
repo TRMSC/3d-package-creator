@@ -50,7 +50,7 @@ function startDownload(){
 */
 
 function handleFileSelect(event) {
-  document.getElementById("filecheck").style = "opacity: 0";
+  document.getElementById("filecheck").classList.remove("checked");
   event.stopPropagation();
   event.preventDefault();
   document.getElementById('list').innerHTML="";
@@ -313,7 +313,7 @@ function fileSave(){
     */
     origin = false;
     upload = true;
-    document.getElementById("filecheck").style = "opacity: 0.7";
+    document.getElementById("filecheck").classList.add("checked");
     handleModelUpload(origin);
     //file = new Blob([finalBuffer],{type: 'model/json-binary'});
     //file2 = URL.createObjectURL(file);

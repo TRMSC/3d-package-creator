@@ -29,6 +29,16 @@ html {
     padding: 15px;
     transition: 0.4s;
 }     
+#filecheck {
+    opacity: 0;
+}
+#filelist li {
+    transition: 1.2s;
+}
+.checked {
+    transition: 1.6s;
+    opacity: 1!important; 
+}
 
 @media (max-width: 480px) {
     html {
