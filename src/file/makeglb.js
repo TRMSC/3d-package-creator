@@ -132,10 +132,12 @@ function traverseFileTree(item, path) {
 
         var extension = file.name.split('.').pop();
         if ( extension === "glb") {
+          console.log ("(makeglb) file is glb");
           openFile(file);
           return;
         }
         if ( extension === "gltf") {
+          console.log ("(makeglb) file is gltf");
           glbfilename=file.name.substr(file.name.lastIndexOf('/')+1,file.name.lastIndexOf('.'));
           var reader = new FileReader();
           reader.readAsText(file);
