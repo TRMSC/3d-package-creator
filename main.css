@@ -32,6 +32,9 @@ html {
 #filecheck {
     opacity: 0;
 }
+li::marker {
+    color: #707070;
+}
 #filelist li {
     transition: 1.2s;
 }
