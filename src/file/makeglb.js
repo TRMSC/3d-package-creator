@@ -126,8 +126,7 @@ function traverseFileTree(item, path) {
     item.file(function(file) {
         files.push(file);
         var fileitem = '<li><strong>'+ escape(file.name)+ '</strong> ('+ file.type + ') - '+
-                  file.size+ ' bytes, last modified: '+ file.lastModifiedDate +
-                  '</li>';
+                  file.size+ ' bytes ' + '</li>';
         document.getElementById('list').innerHTML += fileitem;
 
         var extension = file.name.split('.').pop();
