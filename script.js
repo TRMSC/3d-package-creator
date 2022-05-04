@@ -23,6 +23,17 @@ function openFile(fileUpload) {
   handleContentUpload(fileUpload);
   return;
 }
+function openGlb(fileUpload) {
+  // fileUpload = this.files[0];
+  // uploadGlb = document.getElementById("upload").files[0];
+  uploadGlb = fileUpload.files[0];
+  origin = true;
+  upload = true;
+  //fileUpload = document.getElementById("upload").files[0];
+  console.log ("file is uploaded");
+  handleModelUpload(fileUpload);
+  return;
+}
 
 function exportZip() {
   if (upload == false) {
@@ -47,7 +58,6 @@ function exportZip() {
   if (origin == false) {
     file = new Blob([finalBuffer],{type: 'model/json-binary'});
     console.log ("blob is " + file);
-    //file2 = URL.createObjectURL(file);
     zip.file("model.glb", file, {binary: true});
   }
   

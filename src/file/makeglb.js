@@ -133,7 +133,7 @@ function traverseFileTree(item, path) {
         var extension = file.name.split('.').pop();
         if ( extension === "glb") {
           console.log ("(makeglb) file is glb");
-          openFile(file);
+          openGlb(file);
           return;
         }
         if ( extension === "gltf") {
