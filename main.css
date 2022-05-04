@@ -31,6 +31,11 @@ html {
 }     
 #filecheck {
     opacity: 0;
+    background-color: #bde1bcdb;
+    border-radius: 50%;
+}
+#filecheck path {
+    color: #707070;
 }
 li::marker {
     color: #707070;
