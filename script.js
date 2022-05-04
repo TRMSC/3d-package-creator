@@ -26,7 +26,7 @@ function openFile(fileUpload) {
 function openGlb(fileUpload) {
   // fileUpload = this.files[0];
   // uploadGlb = document.getElementById("upload").files[0];
-  uploadGlb = fileUpload.files[0];
+  uploadGlb = fileUpload;
   origin = true;
   upload = true;
   //fileUpload = document.getElementById("upload").files[0];
