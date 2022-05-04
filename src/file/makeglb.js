@@ -131,6 +131,10 @@ function traverseFileTree(item, path) {
         document.getElementById('list').innerHTML += fileitem;
 
         var extension = file.name.split('.').pop();
+        if ( extension === "glb") {
+          openFile(file);
+          return;
+        }
         if ( extension === "gltf") {
           glbfilename=file.name.substr(file.name.lastIndexOf('/')+1,file.name.lastIndexOf('.'));
           var reader = new FileReader();
