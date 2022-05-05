@@ -153,41 +153,18 @@ function traverseFileTree(item, path) {
 
         if ( extension === "zip" ) {
           console.log ("zip loaded");
-          const reader = new FileReader();
-          reader.readAsArrayBuffer(file);
-          reader.onloadend = function () {
-            const data = reader.result;
-            console.log ("data is " + data);
-            console.log ("data is " + data.length);
-            var items = [];
-            fileNumber = 0;
-            JSZip.loadAsync(data).then((zip) => {
-              for (let i in zip.files) {
-                console.log(i);
-                items[fileNumber] = i;
-                fileNumber++;
-              }
-              console.log(fileNumber + " files");
-              console.log(items);
-      
-              for (var j=0; j<fileNumber; j++) {
-                if (items[j].getAsEntry) {
-                  var entry = items[j].getAsEntry();
-                  console.log("1");
-                } 
-                else if (items[j].webkitGetAsEntry) {
-                  var entry = items[j].webkitGetAsEntry();
-                  console.log("2");
-                }
-                if (entry) {
-                  traverseFileTree(entry);
-                  //console.log("entry")
-                  console.log("3");
-                }
-              }
-            });
-      
-          }
+          var items = [];
+          fileNumber = 0;
+          JSZip.loadAsync(data).then((zip) => {
+            for (let i in zip.files) {
+              console.log(i);
+              items[fileNumber] = i;
+              traverseFileTree(i, path + item.name + "/");
+              fileNumber++;
+            }
+            console.log(fileNumber + " files");
+            console.log(items);
+          });
         }
 
         else{
@@ -203,6 +180,7 @@ function traverseFileTree(item, path) {
     },function(error){
         console.log(error);
     });
+
   } else if (item.isDirectory) {
     var dirReader = item.createReader();
     dirReader.readEntries(function(entries) {
