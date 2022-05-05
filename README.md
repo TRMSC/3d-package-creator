@@ -1,3 +1,7 @@
+<img src="./src/img/3d-package-creator-logo.svg" width="100%">
+
+---
+
 # 3d-package-creator
 
 ## About
