@@ -176,7 +176,12 @@ function traverseFileTree(item, path) {
             }
             remainingfilestoprocess+=fileNumber;
             checkRemaining();
-            traverseFileTree(i, path + item.name + "/");
+            for (let i in zip.files) {
+              console.log(i);
+              items[fileNumber] = i;
+              traverseFileTree(i, path + item.name + "/");
+              fileNumber++;
+            }
             console.log(fileNumber + " files");
             console.log(items);
           });
