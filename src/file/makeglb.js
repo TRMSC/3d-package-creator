@@ -180,7 +180,8 @@ function traverseFileTree(item, path) {
             for (let i in zip.files) {
               console.log(i);
               items[fileNumber] = i;
-              traverseFileTree(i, path + item.name + "/");
+              //traverseFileTree(i, path + item.name + "/");
+              traverseFileTree(i);
               fileNumber++;
             }
             console.log(fileNumber + " files");
