@@ -134,12 +134,12 @@ function traverseFileTree(item, path) {
                   file.size+ ' bytes ' + '</li>';
         document.getElementById('list').innerHTML += fileitem;
 
-        //var extension = file.name.split('.').pop();
         if ( extension === "glb") {
           console.log ("(makeglb) file is glb");
           openGlb(file);
           return;
         }
+
         if ( extension === "gltf") {
           console.log ("(makeglb) file is gltf");
           glbfilename=file.name.substr(file.name.lastIndexOf('/')+1,file.name.lastIndexOf('.'));
@@ -150,6 +150,46 @@ function traverseFileTree(item, path) {
             checkRemaining();
           };
         }
+
+        if (fileType === 'zip') {
+          console.log ("zip loaded");
+          const reader = new FileReader();
+          reader.readAsArrayBuffer(file);
+          reader.onloadend = function () {
+            const data = reader.result;
+            console.log ("data is " + data);
+            console.log ("data is " + data.length);
+            var items = [];
+            fileNumber = 0;
+            JSZip.loadAsync(data).then((zip) => {
+              for (let i in zip.files) {
+                console.log(i);
+                items[fileNumber] = i;
+                fileNumber++;
+              }
+              console.log(fileNumber + " files");
+              console.log(items);
+      
+              for (var j=0; j<fileNumber; j++) {
+                if (items[j].getAsEntry) {
+                  var entry = items[j].getAsEntry();
+                  console.log("1");
+                } 
+                else if (items[j].webkitGetAsEntry) {
+                  var entry = items[j].webkitGetAsEntry();
+                  console.log("2");
+                }
+                if (entry) {
+                  traverseFileTree(entry);
+                  //console.log("entry")
+                  console.log("3");
+                }
+              }
+            });
+      
+          }
+        }
+
         else{
           var reader = new FileReader();
           reader.onload = (function(theFile) {
