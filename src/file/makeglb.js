@@ -174,7 +174,7 @@ function traverseFileTree(item, path) {
               //traverseFileTree(i, path + item.name + "/");
               fileNumber++;
             }
-            remainingfilestoprocess+=filenumber;
+            remainingfilestoprocess+=fileNumber;
             checkRemaining();
             traverseFileTree(i, path + item.name + "/");
             console.log(fileNumber + " files");
