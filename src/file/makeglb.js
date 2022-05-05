@@ -129,6 +129,7 @@ function traverseFileTree(item, path) {
     item.file(function(file) {
         files.push(file);
         var extension = file.name.split('.').pop();
+        console.log ("extension is " + extension);
         var filetype;
         if (file.type == "") { filetype = extension; } 
         else { filetype = file.type; }
