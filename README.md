@@ -56,4 +56,4 @@ __Further a big thanks to [Norbert Forster](https://twitter.com/norbert_forster)
 
 ## Licence
 
-This is software created under the MIT licence. [Check details here](https://github.com/TRMSC/3d-package-creator/blob/main/LICENSE).
+This is free software created under the MIT licence. [Check details here](https://github.com/TRMSC/3d-package-creator/blob/main/LICENSE).
