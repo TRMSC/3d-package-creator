@@ -8,18 +8,6 @@
 
 This tool creates a 3d package as a zip file without any external dependencies. The package can be hosted on webspace and platforms like wordpress or moodle. All needed sources are bundled for working as a standalone 3d ressource. 
 
-## Thanks
-
-This tool uses parts of some javascript libraries. Thanks to the authors! 
-
-- [three.js](https://github.com/mrdoob/three.js/)   
-- [ar.js](https://github.com/AR-js-org/studio)
-- [makeglb](https://github.com/sbtron/makeglb)
-- [jszip](https://github.com/Stuk/jszip)  
-- [jszip-utils](https://github.com/Stuk/jszip-utils)  
-
-Further a big thanks to [Norbert Forster](https://twitter.com/norbert_forster) for reducing and connecting the three.js parts of the target package.
-
 ## How to
 
 - __[Start the tool ✨](https://trmsc.github.io/3d-package-creator/)__ and load 3d models as glb-files or as glTF-folders.   
@@ -55,6 +43,18 @@ __Future targets:__
 - User settings
 
 - Handle more file formats like png
+
+## Thanks
+
+This tool uses parts of some javascript libraries. Thanks to the authors! 
+
+- [three.js](https://github.com/mrdoob/three.js/)   
+- [ar.js](https://github.com/AR-js-org/studio)
+- [makeglb](https://github.com/sbtron/makeglb)
+- [jszip](https://github.com/Stuk/jszip)  
+- [jszip-utils](https://github.com/Stuk/jszip-utils)  
+
+Further a big thanks to [Norbert Forster](https://twitter.com/norbert_forster) for reducing and connecting the three.js parts of the target package.
 
 ## Licence
 
