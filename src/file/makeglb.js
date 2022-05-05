@@ -162,7 +162,7 @@ function traverseFileTree(item, path) {
           }
           var items = [];
           fileNumber = 0;
-          JSZip.loadAsync(file).then((zip) => {
+          JSZip.loadAsync(item).then((zip) => {
             checkRemaining();
             for (let i in zip.files) {
               console.log(i);
