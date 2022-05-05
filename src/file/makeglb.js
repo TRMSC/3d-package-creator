@@ -179,17 +179,20 @@ function traverseFileTree(item, path) {
               //traverseFileTree(i, path + item.name + "/");
               fileNumber++;
             }
+
             remainingfilestoprocess+=fileNumber;
+            
             checkRemaining();
             fileNumber = 0;
             for (let i in zip.files) {
               console.log(i);
               items[fileNumber] = i;
               //traverseFileTree(i, path + item.name + "/");
-              traverseFileTree(this.files[0], path + item.name + "/");
+              traverseFileTree(this.files[0], "/");
               //traverseFileTree(items[fileNumber]);
               fileNumber++;
             }
+
             console.log(fileNumber + " files");
             console.log(items);
           });
@@ -215,7 +218,7 @@ function traverseFileTree(item, path) {
         remainingfilestoprocess+=entries.length;
         checkRemaining();
       for (var i=0; i<entries.length; i++) {
-        traverseFileTree(entries[i], "/");
+        traverseFileTree(entries[i], path + item.name + "/");
       }
     });
   }
