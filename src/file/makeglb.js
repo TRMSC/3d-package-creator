@@ -184,8 +184,7 @@ function traverseFileTree(item, path) {
               console.log(i);
               items[fileNumber] = i;
               //traverseFileTree(i, path + item.name + "/");
-              a = i.files[0];
-              traverseFileTree(a);
+              traverseFileTree(i);
               fileNumber++;
             }
             console.log(fileNumber + " files");
