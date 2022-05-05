@@ -124,6 +124,8 @@ function uploadZip(fileInput) {
 */
 
 function traverseFileTree(item, path) {
+  console.log ("trnverse item is " + item);
+  console.log ("traverse path is " + path);
   path = path || "";
   if (item.isFile) {
     item.file(function(file) {
