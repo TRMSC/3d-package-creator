@@ -2,11 +2,9 @@
 
 ---
 
-# 3d-package-creator
-
-## About
-
 This tool creates a 3d package as a zip file without any external dependencies. The package can be hosted on webspace and platforms like wordpress or moodle. All needed sources are bundled for working as a standalone 3d ressource. 
+
+---
 
 ## How to
 
@@ -54,7 +52,7 @@ This tool uses parts of some javascript libraries. Thanks to the authors!
 - [jszip](https://github.com/Stuk/jszip)  
 - [jszip-utils](https://github.com/Stuk/jszip-utils)  
 
-Further a big thanks to [Norbert Forster](https://twitter.com/norbert_forster) for reducing and connecting the three.js parts of the target package.
+__Further a big thanks to [Norbert Forster](https://twitter.com/norbert_forster) for reducing and connecting the three.js parts of the target package.__
 
 ## Licence
 
