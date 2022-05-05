@@ -153,6 +153,12 @@ function traverseFileTree(item, path) {
 
         if ( extension === "zip" ) {
           console.log ("zip loaded");
+          const reader = new FileReader();
+          reader.readAsArrayBuffer(file);
+          reader.onloadend = function () {
+            const data = reader.result;
+            console.log ("data is " + data);
+            console.log ("data is " + data.length);
           var items = [];
           fileNumber = 0;
           JSZip.loadAsync(data).then((zip) => {
