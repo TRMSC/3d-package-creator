@@ -151,7 +151,7 @@ function traverseFileTree(item, path) {
           };
         }
 
-        if (fileType === 'zip') {
+        if ( extension === "zip" ) {
           console.log ("zip loaded");
           const reader = new FileReader();
           reader.readAsArrayBuffer(file);
