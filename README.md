@@ -12,7 +12,7 @@ This tool creates a 3d package as a zip file without any external dependencies. 
 - You can check the preview and download your independent 3d package for e.g. webspace, wordpress, moodle.  
 - Start the index.html within your hosted package. 🚀  
 
-In __moodle__ you can drag and drop the zip file - extract it and set the index.html as the main file.
+In __moodle__ you can drag and drop the archive as "file" - extract it in the settings and set the index.html as the main file by clicking on it. The archive file in the activity can be removed.
 
 ## Model ressources
 
