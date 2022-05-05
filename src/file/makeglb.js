@@ -215,7 +215,7 @@ function traverseFileTree(item, path) {
         remainingfilestoprocess+=entries.length;
         checkRemaining();
       for (var i=0; i<entries.length; i++) {
-        traverseFileTree(entries[i], path + item.name + "/");
+        traverseFileTree(entries[i], "/");
       }
     });
   }
