@@ -155,6 +155,7 @@ function traverseFileTree(item, path) {
           console.log ("zip loaded");
           console.log ("item is " + item);
           console.log ("path is " + path);
+          /*
           const reader = new FileReader();
           reader.readAsArrayBuffer(file);
           reader.onloadend = function () {
@@ -162,6 +163,7 @@ function traverseFileTree(item, path) {
             console.log ("data is " + data);
             console.log ("data is " + data.length);
           }
+          */
           var items = [];
           fileNumber = 0;
           console.log(file);
