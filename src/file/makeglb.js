@@ -72,6 +72,7 @@ function handleFileSelect(event) {
   console.log(items);
 }
 
+/*
 function uploadZip(fileInput) {
   file = document.getElementById("upload2").files[0];
   let fileType = file.name.split('.').slice(-1)[0];
@@ -120,6 +121,7 @@ function uploadZip(fileInput) {
   }
   upload = true;
 }
+*/
 
 function traverseFileTree(item, path) {
   path = path || "";
@@ -181,6 +183,7 @@ function traverseFileTree(item, path) {
               console.log(i);
               items[fileNumber] = i;
               //traverseFileTree(i, path + item.name + "/");
+              i.files[0];
               traverseFileTree(i);
               fileNumber++;
             }
