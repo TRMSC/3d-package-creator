@@ -183,7 +183,7 @@ function traverseFileTree(item, path) {
             console.log(fileNumber + " files");
             console.log(items);
 
-            var zipreader = new FileReader();
+            zipreader = new FileReader();
 
             for (let i in zip.files) {
               //console.log(zip.files[i]);
