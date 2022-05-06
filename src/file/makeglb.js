@@ -184,16 +184,8 @@ function traverseFileTree(item, path) {
             console.log(items);
 
             for (let i in zip.files) {
-              if (zip.files[i].getAsEntry) {
-                entry = zip.files[i].getAsEntry();
-                console.log (zip.files[i] + " via getAsEntry()");
-              } else if (zip.files[i].webkitGetAsEntry) {
-                entry = zip.files[i].webkitGetAsEntry();
-                console.log (zip.files[i] + " via webkitGetAsEntry()");
-              }
-
-              //console.log(zip.files[i]);
-              //entry = zip.files[i].webkitGetAsEntry();
+              console.log(zip.files[i]);
+              entry = zip.files[i].webkitGetAsEntry();
               console.log(entry);
               traverseFileTree(entry);
             }
