@@ -43,7 +43,6 @@ function addDownloadButton() {
   btn.appendChild(document.createTextNode("Processing..."));
   document.getElementById("download").appendChild(btn);
 }
-
 function startDownload(){
     document.getElementById("downloadLink").click();
 }
@@ -121,17 +120,15 @@ function uploadZip(fileInput) {
   }
   upload = true;
 }
+
 */
 
 function traverseFileTree(item, path) {
-  console.log ("trnverse item is " + item);
-  console.log ("traverse path is " + path);
   path = path || "";
   if (item.isFile) {
     item.file(function(file) {
         files.push(file);
         var extension = file.name.split('.').pop();
-        console.log ("extension is " + extension);
         var filetype;
         if (file.type == "") { filetype = extension; } 
         else { filetype = file.type; }
@@ -156,47 +153,33 @@ function traverseFileTree(item, path) {
           };
         }
 
-        if ( extension === "zip" ) {
+        // --------------------------------------------------
+
+        if ( extension === 'zip' ) {
           console.log ("zip loaded");
-          console.log ("item is " + item);
-          console.log ("path is " + path);
-          /*
           const reader = new FileReader();
           reader.readAsArrayBuffer(file);
           reader.onloadend = function () {
             const data = reader.result;
             console.log ("data is " + data);
             console.log ("data is " + data.length);
-          }
-          */
-          var items = [];
-          fileNumber = 0;
-          console.log(file);
-          JSZip.loadAsync(file).then((zip) => {
-            for (let i in zip.files) {
-              console.log(i);
-              items[fileNumber] = i;
-              //traverseFileTree(i, path + item.name + "/");
-              fileNumber++;
-            }
-
-            remainingfilestoprocess+=fileNumber;
-            
-            checkRemaining();
+            var items = [];
             fileNumber = 0;
-            for (let i in zip.files) {
-              console.log(i);
-              items[fileNumber] = i;
-              //traverseFileTree(i, path + item.name + "/");
-              traverseFileTree(this.files[0], "/");
-              //traverseFileTree(items[fileNumber]);
-              fileNumber++;
-            }
-
-            console.log(fileNumber + " files");
-            console.log(items);
-          });
+            JSZip.loadAsync(file).then((zip) => {
+              for (let i in zip.files) {
+                console.log(i);
+                items[fileNumber] = i;
+                handleFileSelect(this.files[0]);
+                fileNumber++;
+              }
+              console.log(fileNumber + " files");
+              console.log(items);
+            });
+      
+          }
         }
+
+        // --------------------------------------------------
 
         else{
           var reader = new FileReader();
@@ -211,7 +194,6 @@ function traverseFileTree(item, path) {
     },function(error){
         console.log(error);
     });
-
   } else if (item.isDirectory) {
     var dirReader = item.createReader();
     dirReader.readEntries(function(entries) {
