@@ -127,7 +127,7 @@ function traverseFileTree(item, path) {
               entry = zip.files[i];  // CONVERT FROM ZIP OBJECT TO FILE ENTRY
               console.log(entry);
               // traverseFileTree(entry);
-              handleZip(entry);
+              traverseZip(entry);
             }
           });
         }
@@ -161,7 +161,7 @@ function traverseFileTree(item, path) {
 
 // ----------------------------------------------------
 
-function handleZip(zipObject) {
+function traverseZip(zipObject) {
 
   // path = path || "";
 
