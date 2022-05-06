@@ -92,6 +92,7 @@ function traverseFileTree(item, path) {
           glbfilename=file.name.substr(file.name.lastIndexOf('/')+1,file.name.lastIndexOf('.'));
           var reader = new FileReader();
           reader.readAsText(file);
+          reader.readAsText(file);
           reader.onload = function(event) {
             gltf = JSON.parse(event.target.result);
             checkRemaining();
