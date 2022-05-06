@@ -59,8 +59,10 @@ function handleFileSelect(event) {
   for (var i=0; i<items.length; i++) {
     if (items[i].getAsEntry) {
       var entry = items[i].getAsEntry();
+      console.log (items[i] + " via getAsEntry()");
     } else if (items[i].webkitGetAsEntry) {
       var entry = items[i].webkitGetAsEntry();
+      console.log (items[i] + " via webkitGetAsEntry()");
     }
     if (entry) {
       console.log(entry);
@@ -182,12 +184,12 @@ function traverseFileTree(item, path) {
             for (var i=0; i<items.length; i++) {
               if (items[i].getAsEntry) {
                 var entry = items[i].getAsEntry();
-                console.log (items[i] + " via getAsEntry()")
+                console.log (items[i] + " via getAsEntry()");
               } else if (items[i].webkitGetAsEntry) {
                 var entry = items[i].webkitGetAsEntry();
-                onsole.log (items[i] + " via webkitGetAsEntry()")
+                onsole.log (items[i] + " via webkitGetAsEntry()");
               } else {
-                console.log ("no entry...")
+                console.log ("no entry...");
               }
               if (entry) {
                 console.log(entry);
