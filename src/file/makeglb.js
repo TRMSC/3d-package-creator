@@ -185,7 +185,9 @@ function traverseFileTree(item, path) {
 
             for (let i in zip.files) {
               console.log(zip.files[i]);
-              traverseFileTree(zip.files[i], zip.files[i].dirname);
+              entry = zip.files[i].webkitGetAsEntry();
+              console.log(entry);
+              traverseFileTree(entry);
             }
           });
         }
