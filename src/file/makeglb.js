@@ -186,6 +186,8 @@ function traverseFileTree(item, path) {
             } else if (items[i].webkitGetAsEntry) {
               var entry = items[i].webkitGetAsEntry();
               console.log (items[i] + " via webkitGetAsEntry()")
+            } else {
+              console.log ("no entry...")
             }
             if (entry) {
               console.log(entry);
