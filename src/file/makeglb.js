@@ -279,6 +279,8 @@ function processBuffers(){
         if (data !== undefined) {
           outputBuffers.push(data);
           console.log ("push");
+        } else {
+          alert ("Bitte erneut laden...");
         }
         delete buffer.uri;
         buffer.byteLength = data.byteLength;
