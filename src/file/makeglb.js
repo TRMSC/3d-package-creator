@@ -194,8 +194,8 @@ function traverseFileTree(item, path) {
               var zipreader = new FileReader();
               zipreader.readAsArrayBuffer(blob);
               zipreader.onload = function() {
-                traverseFileTree(reader.result);
-                console.log(reader.result);
+                traverseFileTree(zipreader.result);
+                console.log(zipreader.result);
               }
               //console.log(entry);
               //traverseFileTree(entry);
