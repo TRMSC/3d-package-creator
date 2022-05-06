@@ -118,7 +118,7 @@ function traverseFileTree(item, path) {
             console.log (zip.files) 
 
             remainingfilestoprocess=fileNumber;
-            checkRemaining();
+            //checkRemaining();
             console.log(fileNumber + " files");
             console.log(items);
 
