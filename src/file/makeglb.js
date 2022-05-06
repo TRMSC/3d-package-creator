@@ -68,12 +68,12 @@ function traverseFileTree(item, path) {
     item.file(function(file) {
         files.push(file);
         var extension = file.name.split('.').pop();
-        /*
+        
         if (extension == "zip") {
-          traverseZip(file);
+          traverseZip2(file);
           return;
         }
-        */
+        
         var filetype;
         if (file.type == "") { filetype = extension; } 
         else { filetype = file.type; }
