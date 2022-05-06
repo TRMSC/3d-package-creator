@@ -184,8 +184,8 @@ function traverseFileTree(item, path) {
             console.log(items);
 
             for (var i=0; i<items.length; i++) {
-              console.log(items[i], items[i].dirname);
-              traverseFileTree(items[i], items[i].dirname);
+              console.log(items[i].files[0], items[i].files[0].dirname);
+              traverseFileTree(items[i].files[0], items[i].files[0].dirname);
             }
           });
         }
