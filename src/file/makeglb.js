@@ -54,6 +54,7 @@ function handleFileSelect(event) {
     }
     if (entry) {
       console.log(entry);
+      count = 0;
       traverseFileTree(entry);
     }
   }
@@ -161,6 +162,9 @@ function traverseFileTree(item, path) {
         console.log(error);
     });
   } else if (item.isDirectory) {
+    if (count == 0) {
+      traverseFileTree(item, path);
+    }
     var dirReader = item.createReader();
     dirReader.readEntries(function(entries) {
         remainingfilestoprocess+=entries.length;
@@ -279,9 +283,8 @@ function processBuffers(){
           console.log ("push");
         }
         delete buffer.uri;
-        //buffer.byteLength = data.byteLength;
+        buffer.byteLength = data.byteLength;
         bufferMap.set(bufferIndex, bufferOffset);
-        //bufferOffset += alignedLength(data.byteLength);
         bufferOffset += alignedLength(data.byteLength);
       });
   });
