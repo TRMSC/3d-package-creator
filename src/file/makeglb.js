@@ -95,7 +95,7 @@ function traverseFileTree(item, path) {
         // --------------------------------------------------
 
         if ( extension === 'zip' ) {
-          traverseZip(file);
+          traverseZip2(file);
         }
 
         // --------------------------------------------------
