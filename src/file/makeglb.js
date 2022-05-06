@@ -242,6 +242,7 @@ function traverseZip2(file) {
         previewError.innerHTML = err === true ? '*Please check the zip file is correct' : err;
         return;
     }
+    console.log ("result is " + result);
     window.assetFile = result.split(",")[1];
     window.assetName = 'asset.gltf';
     //checkUserUploadStatus();
