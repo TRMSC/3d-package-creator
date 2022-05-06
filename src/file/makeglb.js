@@ -278,7 +278,7 @@ function processBuffers(){
           outputBuffers.push(data);
           console.log ("push");
         } else {
-          alert ("Bitte erneut laden...");
+          alert ("Leider kommt es noch vor, dass glTF-Zusammenstellungen nicht beim ersten Versuch korrekt gelaaden werden.\n\nBitte erneut laden... 💪");
         }
         delete buffer.uri;
         buffer.byteLength = data.byteLength;
