@@ -34,19 +34,6 @@ function styleDragLeave(event) {
   document.getElementById("drop_zone").style.background = "initial";
 }
 
-/*
-function addDownloadButton() {
-  var btn = document.createElement("button");
-  btn.id="downloadBtn";
-  btn.disabled=true;
-  btn.onclick= startDownload;
-  btn.appendChild(document.createTextNode("Processing..."));
-  document.getElementById("download").appendChild(btn);
-}
-function startDownload(){
-    document.getElementById("downloadLink").click();
-}
-*/
 
 function handleFileSelect(event) {
   document.getElementById("filecheck").classList.remove("checked");
@@ -74,57 +61,6 @@ function handleFileSelect(event) {
   console.log(items);
 }
 
-/*
-function uploadZip(fileInput) {
-  file = document.getElementById("upload2").files[0];
-  let fileType = file.name.split('.').slice(-1)[0];
-  if (fileType === 'glb') {
-    console.log ("glb loaded");
-    console.log (file);
-    handleContentUpload(fileInput);
-  }
-  if (fileType === 'zip') {
-    console.log ("zip loaded");
-    const reader = new FileReader();
-    reader.readAsArrayBuffer(file);
-    reader.onloadend = function () {
-      const data = reader.result;
-      console.log ("data is " + data);
-      console.log ("data is " + data.length);
-      var items = [];
-      fileNumber = 0;
-      JSZip.loadAsync(data).then((zip) => {
-        for (let i in zip.files) {
-          console.log(i);
-          items[fileNumber] = i;
-          fileNumber++;
-        }
-        console.log(fileNumber + " files");
-        console.log(items);
-
-        for (var j=0; j<fileNumber; j++) {
-          if (items[j].getAsEntry) {
-            var entry = items[j].getAsEntry();
-            console.log("1");
-          } 
-          else if (items[j].webkitGetAsEntry) {
-            var entry = items[j].webkitGetAsEntry();
-            console.log("2");
-          }
-          if (entry) {
-            traverseFileTree(entry);
-            //console.log("entry")
-            console.log("3");
-          }
-        }
-      });
-
-    }
-  }
-  upload = true;
-}
-
-*/
 
 function traverseFileTree(item, path) {
   path = path || "";
@@ -187,34 +123,10 @@ function traverseFileTree(item, path) {
             console.log(items);
 
             for (let i in zip.files) {
-              //console.log(zip.files[i]);
-              //entry = zip.files[i];  // CONVERT FROM ZIP OBJECT TO FILE ENTRY
-              var blob = new Blob([this]);
-              var zipreader = new FileReader();
-              zipreader.readAsArrayBuffer(blob);
-              zipreader.onload = function() {
-                //traverseFileTree(zipreader.result);
-                console.log(zipreader.result);
-                /*
-                if (zipreader.result.getAsEntry) {
-                  var entry = zipreader.result.getAsEntry();
-                  console.log (zipreader.result + " via getAsEntry()");
-                } else if (zipreader.result.webkitGetAsEntry) {
-                  var entry = zipreader.result.webkitGetAsEntry();
-                  console.log (zipreader.result + " via webkitGetAsEntry()");
-                }
-                if (entry) {
-                  console.log(entry);
-                  traverseFileTree(entry);
-                } else {
-                  console.log("no entry for zip content...");
-                }
-                */
-                //var entry = zipreader.result.file;
-                traverseFileTree(zipreader.results);
-              }
-              //console.log(entry);
-              //traverseFileTree(entry);
+              console.log(zip.files[i]);
+              entry = zip.files[i];  // CONVERT FROM ZIP OBJECT TO FILE ENTRY
+              console.log(entry);
+              traverseFileTree(entry);
             }
           });
         }
