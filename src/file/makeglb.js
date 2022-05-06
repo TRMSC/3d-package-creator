@@ -270,12 +270,16 @@ function checkRemaining(){
     }
 }
 
-async function processBuffers(){
+function processBuffers(){
   var pendingBuffers = gltf.buffers.map(function (buffer, bufferIndex) {
     return dataFromUri(buffer)
       .then(function(data) {
         if (data !== undefined) {
           outputBuffers.push(data);
+        }
+        if (!data.byteLength) {
+          processBuffers().then(fileSave);
+          return false;
         }
         delete buffer.uri;
         buffer.byteLength = data.byteLength;
@@ -284,32 +288,34 @@ async function processBuffers(){
       });
   });
 
-  await Promise.all(pendingBuffers);
-  var bufferIndex_1 = gltf.buffers.length;
-  var images = gltf.images || [];
-  var pendingImages = images.map(function (image) {
-    return dataFromUri(image).then(function (data_1) {
-      if (data_1 === undefined) {
-        delete image['uri'];
-        return;
-      }
-      var bufferView = {
-        buffer: 0,
-        byteOffset: bufferOffset,
-        byteLength: data_1.byteLength,
-      };
-      bufferMap.set(bufferIndex_1, bufferOffset);
-      bufferIndex_1++;
-      bufferOffset += alignedLength(data_1.byteLength);
-      var bufferViewIndex = gltf.bufferViews.length;
-      gltf.bufferViews.push(bufferView);
-      outputBuffers.push(data_1);
-      image['bufferView'] = bufferViewIndex;
-      image['mimeType'] = getMimeType(image.uri);
-      delete image['uri'];
+  return Promise.all(pendingBuffers)
+    .then(function() {
+        var bufferIndex = gltf.buffers.length;
+        var images = gltf.images || [];
+        var pendingImages = images.map(function (image) {
+          return dataFromUri(image).then(function(data) {
+            if (data === undefined) {
+                delete image['uri'];
+                return;
+            }
+            var bufferView = {
+                buffer: 0,
+                byteOffset: bufferOffset,
+                byteLength: data.byteLength,
+            };
+            bufferMap.set(bufferIndex, bufferOffset);
+            bufferIndex++;
+            bufferOffset += alignedLength(data.byteLength);
+            var bufferViewIndex = gltf.bufferViews.length;
+            gltf.bufferViews.push(bufferView);
+            outputBuffers.push(data);
+            image['bufferView'] = bufferViewIndex;
+            image['mimeType'] = getMimeType(image.uri);
+            delete image['uri'];
+          });
+        });
+        return Promise.all(pendingImages);
     });
-  });
-  return await Promise.all(pendingImages);
 }
 
 function fileSave(){
