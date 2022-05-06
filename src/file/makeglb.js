@@ -194,6 +194,7 @@ function traverseFileTree(item, path) {
               zipreader.onload = function() {
                 //traverseFileTree(zipreader.result);
                 console.log(zipreader.result);
+                /*
                 if (zipreader.result.getAsEntry) {
                   var entry = zipreader.result.getAsEntry();
                   console.log (zipreader.result + " via getAsEntry()");
@@ -207,6 +208,9 @@ function traverseFileTree(item, path) {
                 } else {
                   console.log("no entry for zip content...");
                 }
+                */
+                var entry = zipreader.result.webkitGetAsEntry();
+                traverseFileTree(entry);
               }
               //console.log(entry);
               //traverseFileTree(entry);
