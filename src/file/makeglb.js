@@ -199,15 +199,18 @@ function traverseZip(zipObject) {
         }
 
         else {
+          console.log(this + " is another file");
+          /*
           var reader = new FileReader();
           reader.onload = (function(theFile) {
-          return function(e) {
-          fileblobs[theFile.name.toLowerCase()]=(e.target.result);
-          checkRemaining();
-          };
-        })(file);
-        reader.readAsArrayBuffer(file);
-      }
+            return function(e) {
+              fileblobs[theFile.name.toLowerCase()]=(e.target.result);
+              checkRemaining();
+            };
+          })(file);
+          reader.readAsArrayBuffer(file);
+          */
+        }
     // },function(error){
     //    console.log(error);
     // });
