@@ -169,7 +169,7 @@ function traverseFileTree(item, path) {
               for (let i in zip.files) {
                 console.log(i);
                 items[fileNumber] = i;
-                handleFileSelect(this.files[0]);
+                handleFileSelect(this);
                 fileNumber++;
               }
               console.log(fileNumber + " files");
