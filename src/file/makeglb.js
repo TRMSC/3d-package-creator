@@ -126,7 +126,8 @@ function traverseFileTree(item, path) {
               console.log(zip.files[i]);
               entry = zip.files[i];  // CONVERT FROM ZIP OBJECT TO FILE ENTRY
               console.log(entry);
-              traverseFileTree(entry);
+              // traverseFileTree(entry);
+              handleZip(entry);
             }
           });
         }
@@ -157,6 +158,76 @@ function traverseFileTree(item, path) {
     });
   }
 }
+
+// ----------------------------------------------------
+
+function handleZip(zipObject) {
+
+  // path = path || "";
+
+  if (!zipObject.dir) {
+    zipObject.file(function(file) {
+        files.push(file);
+        var extension = file.name.split('.').pop();
+        var filetype;
+        if (file.type == "") { filetype = extension; } 
+        else { filetype = file.type; }
+        var fileitem = '<li><strong>'+ decodeURIComponent(file.name)+ '</strong> ('+ filetype + ') - '+
+                  file.size+ ' bytes ' + '</li>';
+        document.getElementById('list').innerHTML += fileitem;
+
+        if ( extension === "glb") {
+          console.log(this + " is glb");
+          /*
+          openGlb(file);
+          return;
+          */
+        }
+
+        if ( extension === "gltf") {
+          console.log(this + " is gltf");
+          /*
+          glbfilename=file.name.substr(file.name.lastIndexOf('/')+1,file.name.lastIndexOf('.'));
+          var reader = new FileReader();
+          reader.readAsText(file);
+          reader.onload = function(event) {
+            gltf = JSON.parse(event.target.result);
+            checkRemaining();
+          };
+          */
+        }
+
+        else {
+          var reader = new FileReader();
+          reader.onload = (function(theFile) {
+          return function(e) {
+          fileblobs[theFile.name.toLowerCase()]=(e.target.result);
+          checkRemaining();
+          };
+        })(file);
+        reader.readAsArrayBuffer(file);
+      }
+    },function(error){
+        console.log(error);
+    });
+  } 
+
+  else if (zipObject.dir) {
+    console.log(this + " is directory");
+    /*
+    var dirReader = item.createReader();
+    dirReader.readEntries(function(entries) {
+        remainingfilestoprocess+=entries.length;
+        checkRemaining();
+      for (var i=0; i<entries.length; i++) {
+        traverseFileTree(entries[i], path + item.name + "/");
+      }
+    });
+    */
+  }
+}
+
+// ----------------------------------------------------
 
 function checkRemaining(){
     remainingfilestoprocess--;
