@@ -178,11 +178,10 @@ function traverseZip(zipObject) {
         document.getElementById('list').innerHTML += fileitem;
 
         if ( extension === "glb") {
-          console.log(this + " is glb");
-          /*
+          console.log(this + " is glb");         
           openGlb(file);
           return;
-          */
+          
         }
 
         if ( extension === "gltf") {
