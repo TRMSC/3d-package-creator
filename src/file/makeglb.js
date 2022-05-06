@@ -54,8 +54,9 @@ function handleFileSelect(event) {
     }
     if (entry) {
       console.log(entry);
-      count = 0;
       traverseFileTree(entry);
+      var timeout;
+      timeout = window.setTimeout(traverseFileTree(entry), 2000);
     }
   }
   console.log(remainingfilestoprocess+ " files");
@@ -162,10 +163,6 @@ function traverseFileTree(item, path) {
         console.log(error);
     });
   } else if (item.isDirectory) {
-    if (count == 0) {
-      traverseFileTree(item, path);
-      count = 1;
-    }
     var dirReader = item.createReader();
     dirReader.readEntries(function(entries) {
         remainingfilestoprocess+=entries.length;
