@@ -175,14 +175,17 @@ function traverseFileTree(item, path) {
             }
           });
           remainingfilestoprocess=fileNumber;
+          checkRemaining();
           console.log(fileNumber + " files");
           console.log(items);
 
           for (var i=0; i<items.length; i++) {
             if (items[i].getAsEntry) {
               var entry = items[i].getAsEntry();
+              console.log (items[i] + " via getAsEntry()")
             } else if (items[i].webkitGetAsEntry) {
               var entry = items[i].webkitGetAsEntry();
+              console.log (items[i] + " via webkitGetAsEntry()")
             }
             if (entry) {
               console.log(entry);
