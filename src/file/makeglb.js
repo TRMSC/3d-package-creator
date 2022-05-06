@@ -55,6 +55,7 @@ function handleFileSelect(event) {
   document.getElementById('list').innerHTML="";
   //addDownloadButton();
   var items = event.dataTransfer.items;
+  console.log(items);
   remainingfilestoprocess=items.length;
   for (var i=0; i<items.length; i++) {
     if (items[i].getAsEntry) {
@@ -209,8 +210,8 @@ function traverseFileTree(item, path) {
                   console.log("no entry for zip content...");
                 }
                 */
-                var entry = zipreader.result.webkitGetAsEntry();
-                traverseFileTree(entry);
+                //var entry = zipreader.result.file;
+                traverseFileTree(zipreader.results);
               }
               //console.log(entry);
               //traverseFileTree(entry);
