@@ -173,27 +173,28 @@ function traverseFileTree(item, path) {
               //handleFileSelect(i);
               fileNumber++;
             }
-          });
-          remainingfilestoprocess=fileNumber;
-          checkRemaining();
-          console.log(fileNumber + " files");
-          console.log(items);
 
-          for (var i=0; i<items.length; i++) {
-            if (items[i].getAsEntry) {
-              var entry = items[i].getAsEntry();
-              console.log (items[i] + " via getAsEntry()")
-            } else if (items[i].webkitGetAsEntry) {
-              var entry = items[i].webkitGetAsEntry();
-              console.log (items[i] + " via webkitGetAsEntry()")
-            } else {
-              console.log ("no entry...")
+            remainingfilestoprocess=fileNumber;
+            checkRemaining();
+            console.log(fileNumber + " files");
+            console.log(items);
+
+            for (var i=0; i<items.length; i++) {
+              if (items[i].getAsEntry) {
+                var entry = items[i].getAsEntry();
+                console.log (items[i] + " via getAsEntry()")
+              } else if (items[i].webkitGetAsEntry) {
+                var entry = items[i].webkitGetAsEntry();
+                onsole.log (items[i] + " via webkitGetAsEntry()")
+              } else {
+                console.log ("no entry...")
+              }
+              if (entry) {
+                console.log(entry);
+                traverseFileTree(entry);
+              }
             }
-            if (entry) {
-              console.log(entry);
-              traverseFileTree(entry);
-            }
-          }
+          });
         }
 
         // --------------------------------------------------
