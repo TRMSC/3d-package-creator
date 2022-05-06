@@ -274,7 +274,7 @@ function processBuffers(){
   var pendingBuffers = gltf.buffers.map(function (buffer, bufferIndex) {
     return dataFromUri(buffer)
       .then(function(data) {
-        while (data !== undefined) {
+        if (data !== undefined) {
           outputBuffers.push(data);
         }
         /*
@@ -283,6 +283,9 @@ function processBuffers(){
           return false;
         }
         */
+        console.log ("timeout start");
+        window.setTimeout (2000);
+        console.log ("timeout stop");
         delete buffer.uri;
         buffer.byteLength = data.byteLength;
         bufferMap.set(bufferIndex, bufferOffset);
