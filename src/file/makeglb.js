@@ -177,7 +177,6 @@ function traverseFileTree(item, path) {
             }
             console.log (zip);
             console.log (zip.files) 
-            items = zip.dataTransfer.items;
 
             remainingfilestoprocess=fileNumber;
             checkRemaining();
