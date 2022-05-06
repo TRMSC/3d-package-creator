@@ -163,20 +163,31 @@ function traverseFileTree(item, path) {
             const data = reader.result;
             console.log ("data is " + data);
             console.log ("data is " + data.length);
-            var items = [];
-            fileNumber = 0;
-            JSZip.loadAsync(file).then((zip) => {
-              for (let i in zip.files) {
-                console.log(i);
-                items[fileNumber] = i;
-                handleFileSelect(i);
-                fileNumber++;
-              }
-              console.log(fileNumber + " files");
-              console.log(items);
-              //handleFileSelect(items);
-            });
-      
+          }
+          var items = [];
+          fileNumber = 0;
+          JSZip.loadAsync(file).then((zip) => {
+            for (let i in zip.files) {
+              console.log(i);
+              items[fileNumber] = i;
+              //handleFileSelect(i);
+              fileNumber++;
+            }
+          });
+          remainingfilestoprocess=fileNumber;
+          console.log(fileNumber + " files");
+          console.log(items);
+
+          for (var i=0; i<items.length; i++) {
+            if (items[i].getAsEntry) {
+              var entry = items[i].getAsEntry();
+            } else if (items[i].webkitGetAsEntry) {
+              var entry = items[i].webkitGetAsEntry();
+            }
+            if (entry) {
+              console.log(entry);
+              traverseFileTree(entry);
+            }
           }
         }
 
