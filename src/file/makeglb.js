@@ -266,7 +266,6 @@ function checkRemaining(){
       outputBuffers = [];
       bufferMap = new Map();
       bufferOffset = 0;
-      count = 0;
       processBuffers().then(fileSave);
     }
 }
@@ -277,14 +276,9 @@ function processBuffers(){
       .then(function(data) {
         if (data !== undefined) {
           outputBuffers.push(data);
+          console.log ("push");
         }
-        
-        if (count == 0) {
-          count = 1;
-          processBuffers().then(fileSave);
-          return false;
-        }
-
+        outputBuffers.push(data);
         delete buffer.uri;
         buffer.byteLength = data.byteLength;
         bufferMap.set(bufferIndex, bufferOffset);
