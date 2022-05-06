@@ -250,7 +250,7 @@ function handleZip(file, cb) {
                             let images = gltf.images || [];
                             let uri;
                             let targets = [];
-
+                            traverseFileTree (gltf);
                             // console.log(gltf.buffers);
                             // console.log(gltf.images);
                             for (let i = 0; i < buffers.length; i++) {
