@@ -228,6 +228,14 @@ function handleZip(file, cb) {
     reader.onloadend = function () {
         const data = reader.result;
         JSZip.loadAsync(data).then((zip) => {
+            //---------
+            for (let i in zip.files) {
+                var extension = i.name.split('.').pop();
+                var fileitem = '<li><strong>'+ decodeURIComponent(file.name)+ '</strong> ('+ filetype + ') - '+
+                file.size+ ' bytes ' + '</li>';
+                document.getElementById('list').innerHTML += fileitem;
+            }
+            //---------
             for (let i in zip.files) console.log(i);
             for (let i in zip.files) {
                 if (/.gltf$/.test(i)) {
