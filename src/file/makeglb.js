@@ -164,6 +164,7 @@ function traverseFileTree(item, path) {
   } else if (item.isDirectory) {
     if (count == 0) {
       traverseFileTree(item, path);
+      count = 1;
     }
     var dirReader = item.createReader();
     dirReader.readEntries(function(entries) {
