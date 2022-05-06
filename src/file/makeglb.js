@@ -175,26 +175,18 @@ function traverseFileTree(item, path) {
               //handleFileSelect(i);
               fileNumber++;
             }
+            console.log (zip);
+            console.log (zip.files) 
+            items = zip.dataTransfer.items;
 
             remainingfilestoprocess=fileNumber;
             checkRemaining();
             console.log(fileNumber + " files");
             console.log(items);
+            console.log(items.files[0]);
 
             for (var i=0; i<items.length; i++) {
-              if (items[i].getAsEntry) {
-                var entry = items[i].getAsEntry();
-                console.log (items[i] + " via getAsEntry()");
-              } else if (items[i].webkitGetAsEntry) {
-                var entry = items[i].webkitGetAsEntry();
-                console.log (items[i] + " via webkitGetAsEntry()");
-              } else {
-                console.log ("no entry...");
-              }
-              if (entry) {
-                console.log(entry);
-                traverseFileTree(entry);
-              }
+              traverseFileTree(items.name, items.dirname);
             }
           });
         }
