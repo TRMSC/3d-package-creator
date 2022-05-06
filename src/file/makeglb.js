@@ -266,6 +266,7 @@ function checkRemaining(){
       outputBuffers = [];
       bufferMap = new Map();
       bufferOffset = 0;
+      count = 0;
       processBuffers().then(fileSave);
     }
 }
@@ -277,15 +278,13 @@ function processBuffers(){
         if (data !== undefined) {
           outputBuffers.push(data);
         }
-        /*
-        if (!data.byteLength) {
+        
+        if (count == 0) {
+          count = 1;
           processBuffers().then(fileSave);
           return false;
         }
-        */
-        console.log ("timeout start");
-        window.setTimeout (2000);
-        console.log ("timeout stop");
+
         delete buffer.uri;
         buffer.byteLength = data.byteLength;
         bufferMap.set(bufferIndex, bufferOffset);
