@@ -185,8 +185,6 @@ function traverseFileTree(item, path) {
             console.log(fileNumber + " files");
             console.log(items);
 
-            
-
             for (let i in zip.files) {
               //console.log(zip.files[i]);
               //entry = zip.files[i];  // CONVERT FROM ZIP OBJECT TO FILE ENTRY
@@ -194,8 +192,21 @@ function traverseFileTree(item, path) {
               var zipreader = new FileReader();
               zipreader.readAsArrayBuffer(blob);
               zipreader.onload = function() {
-                traverseFileTree(zipreader.result);
+                //traverseFileTree(zipreader.result);
                 console.log(zipreader.result);
+                if (zipreader.result.getAsEntry) {
+                  var entry = zipreader.result.getAsEntry();
+                  console.log (zipreader.result + " via getAsEntry()");
+                } else if (zipreader.result.webkitGetAsEntry) {
+                  var entry = zipreader.result.webkitGetAsEntry();
+                  console.log (zipreader.result + " via webkitGetAsEntry()");
+                }
+                if (entry) {
+                  console.log(entry);
+                  traverseFileTree(entry);
+                } else {
+                  console.log("no entry for zip content...");
+                }
               }
               //console.log(entry);
               //traverseFileTree(entry);
