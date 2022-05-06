@@ -230,7 +230,7 @@ function handleZip(file, cb) {
         JSZip.loadAsync(data).then((zip) => {
             //---------
             for (let i in zip.files) {
-                var extension = i.name.split('.').pop();
+                var filetype = i.split('.').pop();
                 var fileitem = '<li><strong>'+ decodeURIComponent(file.name)+ '</strong> ('+ filetype + ') - '+
                 file.size+ ' bytes ' + '</li>';
                 document.getElementById('list').innerHTML += fileitem;
