@@ -274,13 +274,15 @@ function processBuffers(){
   var pendingBuffers = gltf.buffers.map(function (buffer, bufferIndex) {
     return dataFromUri(buffer)
       .then(function(data) {
-        if (data !== undefined) {
+        while (data !== undefined) {
           outputBuffers.push(data);
         }
+        /*
         if (!data.byteLength) {
           processBuffers().then(fileSave);
           return false;
         }
+        */
         delete buffer.uri;
         buffer.byteLength = data.byteLength;
         bufferMap.set(bufferIndex, bufferOffset);
