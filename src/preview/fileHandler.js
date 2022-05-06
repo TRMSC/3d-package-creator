@@ -231,8 +231,8 @@ function handleZip(file, cb) {
             //---------
             for (let i in zip.files) {
                 var filetype = i.split('.').pop();
-                var fileitem = '<li><strong>'+ decodeURIComponent(file.name)+ '</strong> ('+ filetype + ') - '+
-                file.size+ ' bytes ' + '</li>';
+                var fileitem = '<li><strong>'+ decodeURIComponent(i)+ '</strong> ('+ filetype + ') - '+
+                i.size+ ' bytes ' + '</li>';
                 document.getElementById('list').innerHTML += fileitem;
             }
             //---------
