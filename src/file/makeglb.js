@@ -185,12 +185,13 @@ function traverseFileTree(item, path) {
             console.log(fileNumber + " files");
             console.log(items);
 
-            zipreader = new FileReader();
+            
 
             for (let i in zip.files) {
               //console.log(zip.files[i]);
               //entry = zip.files[i];  // CONVERT FROM ZIP OBJECT TO FILE ENTRY
               var blob = new Blob([this]);
+              var zipreader = new FileReader();
               zipreader.readAsArrayBuffer(blob);
               zipreader.onload = function() {
                 traverseFileTree(reader.result);
