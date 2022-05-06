@@ -68,10 +68,12 @@ function traverseFileTree(item, path) {
     item.file(function(file) {
         files.push(file);
         var extension = file.name.split('.').pop();
+        /*
         if (extension == "zip") {
           traverseZip(file);
           return;
         }
+        */
         var filetype;
         if (file.type == "") { filetype = extension; } 
         else { filetype = file.type; }
@@ -100,11 +102,12 @@ function traverseFileTree(item, path) {
 
         if ( extension === 'zip' ) {
           traverseZip2(file);
+          return;
         }
 
         // --------------------------------------------------
 
-        if ( extension === 'zipold' ) {
+        if ( extension === 'xyz' ) {
           console.log ("zip loaded");
           /*
           const reader = new FileReader();
