@@ -95,6 +95,12 @@ function traverseFileTree(item, path) {
         // --------------------------------------------------
 
         if ( extension === 'zip' ) {
+          traverseZip(file);
+        }
+
+        // --------------------------------------------------
+
+        if ( extension === 'zipold' ) {
           console.log ("zip loaded");
           /*
           const reader = new FileReader();
@@ -162,9 +168,7 @@ function traverseFileTree(item, path) {
 // ----------------------------------------------------
 
 function traverseZip(zipObject) {
-
   // path = path || "";
-
   if (!zipObject.dir) {
     //zipObject(function(file) {
     //    files.push(file);
@@ -180,8 +184,7 @@ function traverseZip(zipObject) {
         if ( extension === "glb") {
           console.log(this + " is glb");         
           openGlb(file);
-          return;
-          
+          return;        
         }
 
         if ( extension === "gltf") {
@@ -228,6 +231,23 @@ function traverseZip(zipObject) {
     });
     */
   }
+}
+
+// ----------------------------------------------------
+
+function traverseZip2(file) {
+  handleZip(file, (err, result) => {
+    if (err) {
+        const previewError = document.getElementById("content-error");
+        previewError.innerHTML = err === true ? '*Please check the zip file is correct' : err;
+        return;
+    }
+    window.assetFile = result.split(",")[1];
+    window.assetName = 'asset.gltf';
+    //checkUserUploadStatus();
+    let preview = document.getElementById("content-preview");
+    preview.innerHTML = previewModelTemplate(result, file.name);
+  })
 }
 
 // ----------------------------------------------------
