@@ -182,7 +182,6 @@ function traverseFileTree(item, path) {
             checkRemaining();
             console.log(fileNumber + " files");
             console.log(items);
-            console.log(items.files[0]);
 
             for (var i=0; i<items.length; i++) {
               traverseFileTree(items.name, items.dirname);
