@@ -16,6 +16,9 @@ function dropInit() {
   var dropZone = document.getElementById('drop_zone');
   dropZone.addEventListener('dragover', handleDragOver, false);
   dropZone.addEventListener('drop', handleFileSelect, false);
+  outputBuffers = [];
+  bufferMap = new Map();
+  bufferOffset = 0;
   processBuffers();
 }
 
