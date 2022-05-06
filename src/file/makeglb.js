@@ -278,10 +278,10 @@ function processBuffers(){
           outputBuffers.push(data);
           console.log ("push");
         }
-        outputBuffers.push(data);
         delete buffer.uri;
-        buffer.byteLength = data.byteLength;
+        //buffer.byteLength = data.byteLength;
         bufferMap.set(bufferIndex, bufferOffset);
+        //bufferOffset += alignedLength(data.byteLength);
         bufferOffset += alignedLength(data.byteLength);
       });
   });
