@@ -166,8 +166,9 @@ function traverseZip(zipObject) {
   // path = path || "";
 
   if (!zipObject.dir) {
-    zipObject.file(function(file) {
-        files.push(file);
+    //zipObject(function(file) {
+    //    files.push(file);
+    file = zipObject;
         var extension = file.name.split('.').pop();
         var filetype;
         if (file.type == "") { filetype = extension; } 
@@ -207,9 +208,9 @@ function traverseZip(zipObject) {
         })(file);
         reader.readAsArrayBuffer(file);
       }
-    },function(error){
-        console.log(error);
-    });
+    // },function(error){
+    //    console.log(error);
+    // });
   } 
 
   else if (zipObject.dir) {
@@ -252,6 +253,12 @@ function processBuffers(){
         bufferOffset += alignedLength(data.byteLength);
       });
   });
+
+// -------------------------------
+
+
+
+// -------------------------------
 
   return Promise.all(pendingBuffers)
     .then(function() {
