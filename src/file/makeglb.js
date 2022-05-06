@@ -16,10 +16,6 @@ function dropInit() {
   var dropZone = document.getElementById('drop_zone');
   dropZone.addEventListener('dragover', handleDragOver, false);
   dropZone.addEventListener('drop', handleFileSelect, false);
-  outputBuffers = [];
-  bufferMap = new Map();
-  bufferOffset = 0;
-  processBuffers();
 }
 
 function handleDragOver(event) {
@@ -59,8 +55,6 @@ function handleFileSelect(event) {
     if (entry) {
       console.log(entry);
       traverseFileTree(entry);
-      var timeout;
-      timeout = window.setTimeout(traverseFileTree(entry), 2000);
     }
   }
   console.log(remainingfilestoprocess+ " files");
