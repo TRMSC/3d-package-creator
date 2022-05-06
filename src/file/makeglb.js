@@ -169,12 +169,12 @@ function traverseFileTree(item, path) {
               for (let i in zip.files) {
                 console.log(i);
                 items[fileNumber] = i;
-                //handleFileSelect(this);
+                handleFileSelect(i);
                 fileNumber++;
               }
               console.log(fileNumber + " files");
               console.log(items);
-              handleFileSelect(items);
+              //handleFileSelect(items);
             });
       
           }
