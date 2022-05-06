@@ -127,7 +127,8 @@ function uploadZip(fileInput) {
 
 function traverseFileTree(item, path) {
   path = path || "";
-  if (item.isFile) {
+  //if (item.isFile) {
+    if (!item.isDirectory) {
     item.file(function(file) {
         files.push(file);
         var extension = file.name.split('.').pop();
@@ -185,7 +186,7 @@ function traverseFileTree(item, path) {
 
             for (let i in zip.files) {
               console.log(zip.files[i]);
-              entry = zip.files[i].webkitGetAsEntry();
+              entry = zip.files[i];
               console.log(entry);
               traverseFileTree(entry);
             }
