@@ -36,6 +36,8 @@ AFRAME.registerComponent('model-controller', {
 
 
                         var max = Math.max(size.x, size.y, size.z);
+                        modelScale = 2 / max; 
+                        console.log ("scale is " + modelScale)
 
                         if (!isNaN(max) && max !== Infinity && max > 0.1) {
                             this.currScale = 2 / max; // 2 is according the experience, need to be confirmed;
