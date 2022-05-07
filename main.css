@@ -15,6 +15,7 @@ html {
     border: 1px solid #333;
     background: rgba(0,0,0,0.7);
     height: fit-content;
+    border-radius: 8px;
 }
 #drop_zone {
     border: 2px dashed #bbb;
@@ -29,6 +30,13 @@ html {
     box-shadow: 0 0 10px;
     background: #00000033;
     cursor: pointer;
+}
+#result {
+    display: flex;
+    align-items: center;
+}
+#fileList {
+    width: -webkit-fill-available;
 }
 #filecheck {
     opacity: 0;

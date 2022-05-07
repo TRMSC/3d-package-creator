@@ -10,7 +10,8 @@
 }
 #content-preview {
     width: fit-content;
-    border: 1px solid;
+    border: 2px solid #767676;
+    border-radius: 8px;
 }
 .filename-container {
     display: none!important;
