@@ -34,6 +34,9 @@ function openGlb(fileUpload) {
   handleModelUpload(fileUpload);
   return;
 }
+function clickDropzone() {
+  document.getElementById("upload").click();
+}
 
 function exportZip() {
   if (upload == false) {

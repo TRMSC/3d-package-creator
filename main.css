@@ -10,14 +10,10 @@ html {
     border-left: 1px solid black;
     padding-left: 10px;
 }
-#drop {
-    display: flex;
-}
 .area {
     padding: 15px;
     border: 1px solid #333;
     background: rgba(0,0,0,0.7);
-    width: 17em;
     height: fit-content;
 }
 #drop_zone {
@@ -29,6 +25,11 @@ html {
     padding: 15px;
     transition: 0.4s;
 }     
+#drop_zone:hover {
+    box-shadow: 0 0 10px;
+    background: #00000033;
+    cursor: pointer;
+}
 #filecheck {
     opacity: 0;
     background-color: #bde1bcdb;
