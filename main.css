@@ -64,16 +64,18 @@ li::marker {
 }
 @media (max-width: 650px) {
     #result {
-        display: flex;
+        display: none;
         flex-direction: column;
     }
     #feedback {
         margin: initial;
     }
     #downloadPackage {
-        display: flex;
-        justify-content: space-between;
+        display: none;
         margin: 20px 0px;
+    }
+    #downloadPackage fieldset, #downloadPackage input {
+        width: 100%!important;
     }
 }
 @media (max-width: 480px) {
