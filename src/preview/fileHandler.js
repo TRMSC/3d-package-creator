@@ -145,7 +145,7 @@ function handleVideoUpload(file) {
 
 function handleModelUpload(file) {
     document.getElementById("filecheck").classList.add("checked");
-    document.getElementById("result").style.display = "initial";
+    document.getElementById("result").style.display = "flex";
     document.getElementById("downloadPackage").style.display = "initial";
     if (file == false) {
         file = new Blob([finalBuffer],{type: 'model/json-binary'});
