@@ -62,7 +62,20 @@ li::marker {
 #result, #downloadPackage {
     display: none;
 }
-
+@media (max-width: 650px) {
+    #result {
+        display: flex;
+        flex-direction: column;
+    }
+    #feedback {
+        margin: initial;
+    }
+    #downloadPackage {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0px;
+    }
+}
 @media (max-width: 480px) {
     html {
         margin: 20px 25px;
