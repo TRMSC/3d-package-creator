@@ -35,6 +35,9 @@ html {
     display: flex;
     align-items: center;
 }
+.a-canvas {
+    border-radius: 8px;
+}
 #fileList {
     width: -webkit-fill-available;
 }
