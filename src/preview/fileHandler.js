@@ -147,6 +147,7 @@ function handleModelUpload(file) {
     document.getElementById("filecheck").classList.add("checked");
     document.getElementById("result").style.display = "flex";
     document.getElementById("downloadPackage").style.display = "initial";
+    document.getElementById("content-error").style.display = "none";
     if (file == false) {
         file = new Blob([finalBuffer],{type: 'model/json-binary'});
         fileType = 'glb';
