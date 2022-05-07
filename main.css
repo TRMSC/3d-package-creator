@@ -52,6 +52,9 @@ li::marker {
 #filelist li {
     transition: 1.2s;
 }
+#feedback {
+    margin: 50px;
+}
 .checked {
     transition: 2.2s;
     opacity: 1!important; 
