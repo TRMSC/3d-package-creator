@@ -227,6 +227,10 @@ function handleModelUpload(file) {
 };
 
 function handleZip(file, cb) {
+    document.getElementById("result").style.display = "flex";
+    document.getElementById("feedback").style.display = "initial";
+    document.getElementById("downloadPackage").style.display = "initial";
+    document.getElementById("content-error").style.display = "none";
     const reader = new FileReader();
     reader.readAsArrayBuffer(file);
     reader.onloadend = function () {

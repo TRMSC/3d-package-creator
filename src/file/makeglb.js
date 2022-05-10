@@ -70,7 +70,7 @@ function traverseFileTree(item, path) {
         var extension = file.name.split('.').pop();
         
         if (extension == "zip") {
-          traverseZip2(file);
+          traverseZip(file);
           return;
         }
         
@@ -101,7 +101,8 @@ function traverseFileTree(item, path) {
         // --------------------------------------------------
 
         if ( extension === 'zip' ) {
-          traverseZip2(file);
+
+          traverseZip(file);
           return;
         }
 
@@ -174,75 +175,7 @@ function traverseFileTree(item, path) {
 
 // ----------------------------------------------------
 
-function traverseZip(zipObject) {
-  // path = path || "";
-  if (!zipObject.dir) {
-    //zipObject(function(file) {
-    //    files.push(file);
-    file = zipObject;
-        var extension = file.name.split('.').pop();
-        var filetype;
-        if (file.type == "") { filetype = extension; } 
-        else { filetype = file.type; }
-        var fileitem = '<li><strong>'+ decodeURIComponent(file.name)+ '</strong> ('+ filetype + ') - '+
-                  file.size+ ' bytes ' + '</li>';
-        document.getElementById('list').innerHTML += fileitem;
-
-        if ( extension === "glb") {
-          console.log(this + " is glb");         
-          openGlb(file);
-          return;        
-        }
-
-        if ( extension === "gltf") {
-          console.log(this + " is gltf");
-          /*
-          glbfilename=file.name.substr(file.name.lastIndexOf('/')+1,file.name.lastIndexOf('.'));
-          var reader = new FileReader();
-          reader.readAsText(file);
-          reader.onload = function(event) {
-            gltf = JSON.parse(event.target.result);
-            checkRemaining();
-          };
-          */
-        }
-
-        else {
-          console.log(this + " is another file");
-          /*
-          var reader = new FileReader();
-          reader.onload = (function(theFile) {
-            return function(e) {
-              fileblobs[theFile.name.toLowerCase()]=(e.target.result);
-              checkRemaining();
-            };
-          })(file);
-          reader.readAsArrayBuffer(file);
-          */
-        }
-    // },function(error){
-    //    console.log(error);
-    // });
-  } 
-
-  else if (zipObject.dir) {
-    console.log(this + " is directory");
-    /*
-    var dirReader = item.createReader();
-    dirReader.readEntries(function(entries) {
-        remainingfilestoprocess+=entries.length;
-        checkRemaining();
-      for (var i=0; i<entries.length; i++) {
-        traverseFileTree(entries[i], path + item.name + "/");
-      }
-    });
-    */
-  }
-}
-
-// ----------------------------------------------------
-
-function traverseZip2(file) {
+function traverseZip(file) {
   handleZip(file, (err, result) => {
     if (err) {
         const previewError = document.getElementById("content-error");
@@ -252,7 +185,6 @@ function traverseZip2(file) {
     console.log ("result is " + result);
     window.assetFile = result.split(",")[1];
     window.assetName = 'asset.gltf';
-    //checkUserUploadStatus();
     let preview = document.getElementById("content-preview");
     preview.innerHTML = previewModelTemplate(result, file.name);
   })

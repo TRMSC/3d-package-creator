@@ -13,6 +13,7 @@ function getYear() {
 var origin = false;
 var upload = false;
 var fileUpload;
+
 function openFile(fileUpload) {
   //fileUpload = this.files[0];
   uploadGlb = document.getElementById("upload").files[0];
@@ -23,6 +24,7 @@ function openFile(fileUpload) {
   handleContentUpload(fileUpload);
   return;
 }
+
 function openGlb(fileUpload) {
   // fileUpload = this.files[0];
   // uploadGlb = document.getElementById("upload").files[0];
@@ -34,6 +36,7 @@ function openGlb(fileUpload) {
   handleModelUpload(fileUpload);
   return;
 }
+
 function clickDropzone() {
   document.getElementById("upload").click();
 }
