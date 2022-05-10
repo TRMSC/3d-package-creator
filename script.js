@@ -41,6 +41,12 @@ function clickDropzone() {
   document.getElementById("upload").click();
 }
 
+function makeFeedback(n) {
+  var note = document.createElement("p");
+  document.getElementById("filelist").appendChild(note);
+  note.appendChild(n);
+}
+
 function exportZip() {
   if (upload == false) {
     alert ("Keine Modelldatei ausgewählt...");
