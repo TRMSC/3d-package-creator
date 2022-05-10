@@ -98,12 +98,6 @@ function traverseFileTree(item, path) {
           };
         }
 
-        if ( extension === 'zip' ) {
-
-          traverseZip(file);
-          return;
-        }
-
         else{
           var reader = new FileReader();
           reader.onload = (function(theFile) {
