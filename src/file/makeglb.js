@@ -40,6 +40,7 @@ function handleFileSelect(event) {
   event.stopPropagation();
   event.preventDefault();
   document.getElementById('list').innerHTML="";
+  document.getElementById('note').innerHTML="";
   //addDownloadButton();
   var items = event.dataTransfer.items;
   console.log(items);

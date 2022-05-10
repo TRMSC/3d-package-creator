@@ -42,10 +42,8 @@ function clickDropzone() {
 }
 
 function makeFeedback(n) {
-  var n = document.createTextNode(n);
-  var note = document.createElement("p");
-  document.getElementById("filelist").appendChild(note);
-  note.appendChild(n);
+  document.getElementById("note").innerHTML=n;
+  return;
 }
 
 function exportZip() {
