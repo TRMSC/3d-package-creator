@@ -231,6 +231,8 @@ function handleZip(file, cb) {
     document.getElementById("feedback").style.display = "initial";
     document.getElementById("downloadPackage").style.display = "initial";
     document.getElementById("content-error").style.display = "none";
+    var note = "Zip-Dateien können aktuell noch nicht vollständig verarbeitet werden.";
+    makeFeedback(note);
     const reader = new FileReader();
     reader.readAsArrayBuffer(file);
     reader.onloadend = function () {

@@ -98,55 +98,11 @@ function traverseFileTree(item, path) {
           };
         }
 
-        // --------------------------------------------------
-
         if ( extension === 'zip' ) {
 
           traverseZip(file);
           return;
         }
-
-        // --------------------------------------------------
-
-        if ( extension === 'xyz' ) {
-          console.log ("zip loaded");
-          /*
-          const reader = new FileReader();
-          reader.readAsArrayBuffer(file);
-          reader.onloadend = function () {
-            const data = reader.result;
-            console.log ("data is " + data);
-            console.log ("data is " + data.length);
-          }
-          */
-          var items = [];
-          fileNumber = 0;
-          JSZip.loadAsync(file).then((zip) => {
-            for (let i in zip.files) {
-              console.log(i);
-              items[fileNumber] = i;
-              //handleFileSelect(i);
-              fileNumber++;
-            }
-            console.log (zip);
-            console.log (zip.files) 
-
-            remainingfilestoprocess=fileNumber;
-            //checkRemaining();
-            console.log(fileNumber + " files");
-            console.log(items);
-
-            for (let i in zip.files) {
-              console.log(zip.files[i]);
-              entry = zip.files[i];  // CONVERT FROM ZIP OBJECT TO FILE ENTRY
-              console.log(entry);
-              // traverseFileTree(entry);
-              traverseZip(entry);
-            }
-          });
-        }
-
-        // --------------------------------------------------
 
         else{
           var reader = new FileReader();
