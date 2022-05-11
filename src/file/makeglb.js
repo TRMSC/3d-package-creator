@@ -78,8 +78,10 @@ function traverseFileTree(item, path) {
         var filetype;
         if (file.type == "") { filetype = extension; } 
         else { filetype = file.type; }
+        var filesize = file.size/1000;
+        filesize = Math.round(filesize);
         var fileitem = '<li><strong>'+ decodeURIComponent(file.name)+ '</strong> ('+ filetype + ') - '+
-                  file.size+ ' bytes ' + '</li>';
+                  filesize+ ' kb ' + '</li>';
         document.getElementById('list').innerHTML += fileitem;
 
         if ( extension === "glb") {
