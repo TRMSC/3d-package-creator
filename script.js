@@ -25,7 +25,7 @@ function printDetails(file) {
   else { filetype = file.type; }
   var filesize = file.size/1000;
   filesize = Math.round(filesize);
-  var fileitem = '<li><strong>'+ decodeURIComponent(file.name)+ '</strong> ('+ filetype + ') - '+
+  var fileitem = '<li class="listItem"><strong>'+ decodeURIComponent(file.name)+ '</strong> ('+ filetype + ') - '+
             filesize+ ' kb ' + '</li>';
   document.getElementById('list').innerHTML += fileitem;
   return extension;

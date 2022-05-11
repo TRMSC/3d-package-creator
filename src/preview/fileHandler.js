@@ -147,7 +147,7 @@ function handleModelUpload(file) {
     document.getElementById("filecheck").classList.add("checked");
     document.getElementById("result").style.display = "flex";
     document.getElementById("feedback").style.display = "initial";
-    document.getElementById("downloadPackage").style.display = "initial";
+    //document.getElementById("downloadPackage").style.display = "initial";
     document.getElementById("content-error").style.display = "none";
     if (file == false) {
         file = new Blob([finalBuffer],{type: 'model/json-binary'});
@@ -229,7 +229,7 @@ function handleModelUpload(file) {
 function handleZip(file, cb) {
     document.getElementById("result").style.display = "flex";
     document.getElementById("feedback").style.display = "initial";
-    document.getElementById("downloadPackage").style.display = "initial";
+    //document.getElementById("downloadPackage").style.display = "initial";
     document.getElementById("content-error").style.display = "none";
     var note = "Zip-Dateien können aktuell noch nicht vollständig verarbeitet werden.";
     makeFeedback(note);

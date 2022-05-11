@@ -33,7 +33,7 @@ html {
 }
 #result {
     display: flex;
-    align-items: center;
+    justify-content: space-evenly;
 }
 .a-canvas {
     border-radius: 8px;
@@ -52,6 +52,9 @@ html {
 li::marker {
     color: #707070;
 }
+#filelist {
+    width: -webkit-fill-available;
+}
 #filelist li {
     transition: 1.2s;
 }
@@ -64,6 +67,9 @@ li::marker {
 }
 #result, #downloadPackage {
     display: none;
+}
+#download {
+    margin: 20px;
 }
 @media (max-width: 650px) {
     #result {
