@@ -33,7 +33,7 @@ html {
 }
 #result {
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
 }
 .a-canvas {
     border-radius: 8px;
@@ -67,6 +67,9 @@ li::marker {
 }
 #result, #downloadPackage {
     display: none;
+}
+#note {
+    margin: 0px 20px;
 }
 #download {
     margin: 20px;
