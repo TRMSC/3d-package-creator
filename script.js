@@ -14,9 +14,29 @@ var origin = false;
 var upload = false;
 var fileUpload;
 
+function printDetails(file) {
+  var extension = file.name.split('.').pop();      
+  if (extension == "zip") {
+    traverseZip(file);
+    return;
+  }      
+  var filetype;
+  if (file.type == "") { filetype = extension; } 
+  else { filetype = file.type; }
+  var filesize = file.size/1000;
+  filesize = Math.round(filesize);
+  var fileitem = '<li><strong>'+ decodeURIComponent(file.name)+ '</strong> ('+ filetype + ') - '+
+            filesize+ ' kb ' + '</li>';
+  document.getElementById('list').innerHTML += fileitem;
+  return extension;
+}
+
 function openFile(fileUpload) {
   //fileUpload = this.files[0];
   uploadGlb = document.getElementById("upload").files[0];
+  console.log (uploadGlb.size);
+  console.log (uploadGlb.name.split('.').pop());
+  printDetails (uploadGlb);
   origin = true;
   upload = true;
   //fileUpload = document.getElementById("upload").files[0];

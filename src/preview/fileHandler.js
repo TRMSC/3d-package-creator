@@ -240,10 +240,11 @@ function handleZip(file, cb) {
         JSZip.loadAsync(data).then((zip) => {
             //---------
             for (let i in zip.files) {
+                //printDetails (i);
                 var filetype = i.split('.').pop();
                 var fileitem = '<li><strong>'+ decodeURIComponent(i)+ '</strong> ('+ filetype + ') - '+
                 i.size+ ' bytes ' + '</li>';
-                document.getElementById('list').innerHTML += fileitem;
+                document.getElementById('list').innerHTML += fileitem;              
             }
             //---------
             for (let i in zip.files) console.log(i);

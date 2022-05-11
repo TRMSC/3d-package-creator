@@ -62,19 +62,18 @@ function handleFileSelect(event) {
   console.log(items);
 }
 
-
 function traverseFileTree(item, path) {
   path = path || "";
   if (item.isFile) {
     item.file(function(file) {
         files.push(file);
-        var extension = file.name.split('.').pop();
-        
+        var extension = printDetails(file);
+        /*
+        var extension = file.name.split('.').pop();      
         if (extension == "zip") {
           traverseZip(file);
           return;
-        }
-        
+        }      
         var filetype;
         if (file.type == "") { filetype = extension; } 
         else { filetype = file.type; }
@@ -83,7 +82,7 @@ function traverseFileTree(item, path) {
         var fileitem = '<li><strong>'+ decodeURIComponent(file.name)+ '</strong> ('+ filetype + ') - '+
                   filesize+ ' kb ' + '</li>';
         document.getElementById('list').innerHTML += fileitem;
-
+        */
         if ( extension === "glb") {
           console.log ("(makeglb) file is glb");
           openGlb(file);
