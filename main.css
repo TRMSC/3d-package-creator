@@ -59,8 +59,7 @@ li::marker {
     margin: 50px;
 }
 .checked {
-    transition: 2.2s;
-    opacity: 1!important; 
+    display: initial!important
 }
 #result {
     display: none;
@@ -70,9 +69,16 @@ li::marker {
 }
 #download {
     margin: 20px;
-    opacity: 0;
+    display: none;
     cursor: pointer;
-    transition: 2.2s;
+    transition: 0.4s;
+    font-size: large;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #cbf3cb;
+}
+#download:hover {
+    background-color: #a0c8a0!important;
 }
 @media (max-width: 650px) {
     #result {

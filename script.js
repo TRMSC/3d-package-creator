@@ -45,7 +45,6 @@ function openFile(fileUpload) {
   return;
 }
 
-/*
 function openGlb(fileUpload) {
   uploadGlb = fileUpload;
   origin = true;
@@ -53,7 +52,7 @@ function openGlb(fileUpload) {
   console.log ("file is uploaded");
   handleModelUpload(fileUpload);
   return;
-}*/
+}
 
 function clickDropzone() {
   document.getElementById("upload").click();
