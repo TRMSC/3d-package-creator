@@ -66,6 +66,15 @@ function makeFeedback(n) {
   return;
 }
 
+function activateDownload() {
+  document.getElementById("filecheck").classList.add("checked");
+  document.getElementById("result").style.display = "flex";
+  document.getElementById("feedback").style.display = "initial";
+  //document.getElementById("downloadPackage").style.display = "initial";
+  document.getElementById("content-error").style.display = "none";
+  return;
+}
+
 function exportZip() {
   if (upload == false) {
     alert ("Keine Modelldatei ausgewählt...");
