@@ -67,10 +67,10 @@ function makeFeedback(n) {
 }
 
 function activateDownload() {
-  document.getElementById("filecheck").classList.add("checked");
   document.getElementById("result").style.display = "flex";
   document.getElementById("feedback").style.display = "initial";
-  //document.getElementById("downloadPackage").style.display = "initial";
+  document.getElementById("download").classList.add("checked");
+  //document.getElementById("filecheck").classList.add("checked");
   document.getElementById("content-error").style.display = "none";
   return;
 }

@@ -36,7 +36,7 @@ function styleDragLeave(event) {
 
 
 function handleFileSelect(event) {
-  document.getElementById("filecheck").classList.remove("checked");
+  document.getElementById("download").classList.remove("checked");
   event.stopPropagation();
   event.preventDefault();
   document.getElementById('list').innerHTML="";
