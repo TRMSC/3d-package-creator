@@ -63,6 +63,7 @@ li::marker {
 }
 #result {
     display: none;
+    gap: 30px;
 }
 #note {
     margin: 0px 20px;
