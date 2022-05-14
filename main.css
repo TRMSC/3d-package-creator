@@ -81,6 +81,8 @@ li::marker {
     border: 2px solid black;
     border-radius: 8px;
     background-color: #cbf3cb;
+    max-width: -webkit-fill-available;
+    white-space: break-spaces;
 }
 #download:hover {
     background-color: #a0c8a0!important;
