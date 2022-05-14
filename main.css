@@ -65,7 +65,7 @@ li::marker {
     transition: 2.2s;
     opacity: 1!important; 
 }
-#result, #downloadPackage {
+#result {
     display: none;
 }
 #note {
@@ -81,13 +81,6 @@ li::marker {
     }
     #feedback {
         margin: initial;
-    }
-    #downloadPackage {
-        display: none;
-        margin: 20px 0px;
-    }
-    #downloadPackage fieldset, #downloadPackage input {
-        width: 100%!important;
     }
 }
 @media (max-width: 480px) {
