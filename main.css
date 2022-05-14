@@ -41,6 +41,9 @@ html {
 #fileList {
     width: -webkit-fill-available;
 }
+.listItem {
+    padding-right: 50px;
+}
 #filecheck {
     opacity: 0;
     background-color: #bde1bcdb;
@@ -75,13 +78,21 @@ li::marker {
     transition: 0.4s;
     font-size: large;
     padding: 10px;
+    border: 2px solid black;
     border-radius: 8px;
     background-color: #cbf3cb;
 }
 #download:hover {
     background-color: #a0c8a0!important;
 }
-@media (max-width: 650px) {
+@media (min-width: 880px) {
+    #result {
+        border-right: 5px ridge #d0d0d0;
+        border-radius: 8px;
+        background-image: linear-gradient(270deg, #7c7c7c, transparent);
+    }
+}
+@media (max-width: 880px) {
     #result {
         display: none;
         flex-direction: column;
