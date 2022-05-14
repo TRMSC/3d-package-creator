@@ -45,17 +45,15 @@ function openFile(fileUpload) {
   return;
 }
 
+/*
 function openGlb(fileUpload) {
-  // fileUpload = this.files[0];
-  // uploadGlb = document.getElementById("upload").files[0];
   uploadGlb = fileUpload;
   origin = true;
   upload = true;
-  //fileUpload = document.getElementById("upload").files[0];
   console.log ("file is uploaded");
   handleModelUpload(fileUpload);
   return;
-}
+}*/
 
 function clickDropzone() {
   document.getElementById("upload").click();

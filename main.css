@@ -55,9 +55,6 @@ li::marker {
 #filelist {
     width: -webkit-fill-available;
 }
-#filelist li {
-    transition: 1.2s;
-}
 #feedback {
     margin: 50px;
 }
@@ -75,6 +72,7 @@ li::marker {
     margin: 20px;
     opacity: 0;
     cursor: pointer;
+    transition: 2.2s;
 }
 @media (max-width: 650px) {
     #result {
