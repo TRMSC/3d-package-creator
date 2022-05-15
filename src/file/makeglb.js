@@ -161,7 +161,7 @@ function processBuffers(){
           outputBuffers.push(data);
           console.log ("push");
         } else {
-          alert ("Leider kommt es noch vor, dass glTF-Zusammenstellungen beim ersten Versuch nicht korrekt eingebunden werden.\n\nBitte erneut laden... 💪");
+          //alert ("Leider kommt es noch vor, dass glTF-Zusammenstellungen beim ersten Versuch nicht korrekt eingebunden werden.\n\nBitte erneut laden... 💪");
           //document.getElementById('list').innerHTML="";
           let n = "Das hat leider nicht geklappt... Bitte erneut versuchen oder Dateiformat überprüfen! 💪"
           makeFeedback(n);
