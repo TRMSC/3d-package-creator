@@ -37,7 +37,7 @@ function styleDragLeave(event) {
 
 function handleFileSelect(event) {
   document.getElementById("download").classList.remove("checked");
-  //document.getElementById("loadingcontainer").style.zIndex = "999";
+  document.getElementById("loadingcontainer").style.zIndex = "999";
   document.getElementById("loadingcontainer").style.opacity = "1";
   event.stopPropagation();
   event.preventDefault();
