@@ -68,6 +68,28 @@ li::marker {
     display: none;
     gap: 30px;
 }
+#loadingcontainer {
+    position: relative;
+    z-index: 999;
+    transition: 2.2s;
+}
+#loadingscreen {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: -webkit-fill-available;
+}
+#loadingtext {
+    padding: 0px;
+    text-align: center;
+    margin: 50% 0%;
+    font-family: monospace;
+    font-size: larger;
+    background-color: white;
+    border: 2px solid #767676;
+}
 #note {
     margin: 0px 20px;
 }
