@@ -33,6 +33,10 @@ function printDetails(file) {
 
 function openFile(fileUpload) {
   //fileUpload = this.files[0];
+  document.getElementById('list').innerHTML="";
+  document.getElementById('note').innerHTML="";
+  document.getElementById("loadingcontainer").style.zIndex = "999";
+  document.getElementById("loadingcontainer").style.opacity = "1";
   uploadGlb = document.getElementById("upload").files[0];
   console.log (uploadGlb.size);
   console.log (uploadGlb.name.split('.').pop());
